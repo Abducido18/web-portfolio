@@ -63,8 +63,8 @@ header {
 
 .nav-menu{
   position: fixed;
+  top: 6.5vh;
   left: -100%;
-  top: 9.8vh;
   width: 100%;
   text-align: center;
   background-color: #F5ECD5;
@@ -86,7 +86,6 @@ header {
   flex-direction: column;
   width: 100%;
 	border-bottom:#FFFAEC 1px solid;
-
   font-weight: 600;
   font-style: normal;
   color: #3D3D3D;
@@ -126,7 +125,8 @@ header {
   font-size: 1.5rem;
   font-weight: 600;
   padding: 0 24px;
-  margin-bottom: 3vh;
+  margin-top: 5vh;
+  margin-bottom: 5vh;
   animation-name: fadeInUp;
   animation-duration: 1s;
   animation-timing-function: ease-out;
