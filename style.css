@@ -1,21 +1,12 @@
+:root {
+  --header-height: 3rem;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 
-}
-
-@media screen and (min-width: 1024px) {
-  :root {
-      --biggest-font-size: 3rem;
-      --h1-font-size: 2.25rem;
-      --h2-font-size: 1.5rem;
-      --h3-font-size: 1.25rem;
-      --normal-font-size: 1rem;
-      --small-font-size: .875rem;
-      --smaller-font-size: .813rem;
-      --tiny-font-size: .688rem;
-  }
 }
 
 html, body {
@@ -25,6 +16,8 @@ html, body {
   background-color: #3D3D3D ;
   overflow-x: hidden; /* Evita scroll lateral */
   overflow-y: visible; 
+  font-family: "Poppins", serif;
+  background-color: white;
 }
 
 html {
@@ -46,26 +39,27 @@ button {
   all: unset;
 }
 
-.nav-bar{
-  height: 8vh;
+header {
   width: 100%;
   position: fixed;
   top: 0;
   left: 0;
   z-index: 1000;
-  background-color: blue ;
-  border-bottom:1px solid black;
+}
+.nav-bar{
+  height: var(--header-height);
+  background-color: white;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 24px;
-  font-family: "Poppins", serif;
-  color: white;
-  font-weight: 800;
+  padding: 0 18px;
+  color: black;
+  font-weight: 200;
   font-style: normal;
   will-change: transform;
   box-sizing: border-box;
 }
+
 
 .nav-menu{
   position: fixed;
@@ -92,7 +86,7 @@ button {
   flex-direction: column;
   width: 100%;
 	border-bottom:#FFFAEC 1px solid;
-  font-family: "Poppins", serif;
+
   font-weight: 600;
   font-style: normal;
   color: #3D3D3D;
@@ -107,9 +101,9 @@ button {
 /* About Me Section */
 
 .about-me {
-  margin-top: 10vh;
-  max-height: auto;
-  background-color: blue;
+  margin-top: 8vh;
+  height: 92vh;
+  background-color: white;
   will-change: transform, opacity;
   box-sizing: border-box;
   overflow: hidden;
@@ -122,13 +116,16 @@ button {
   padding: 2vh 24px; /* Agrega el mismo padding lateral que la nav-bar */
   display: flex;
   flex-direction: column;
+  justify-content: space-around;
   align-items: center;
   text-align: center;
   overflow: hidden; /* Evita desbordamientos */
 }
 
 .cover h1 {
-  font-size: 2.25rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  padding: 0 24px;
   margin-bottom: 3vh;
   animation-name: fadeInUp;
   animation-duration: 1s;
@@ -178,6 +175,8 @@ button {
 .profile-image {
   height: 40vh; /* Reduce la altura */
   width: auto;  /* Mantén el ancho proporcional */
+  padding: 5px 5px 5px 5px;
+  border-left: 1px solid black;
   object-fit: cover;
   animation-name: fadeInUp;
   animation-duration: 1s;
@@ -190,10 +189,10 @@ button {
 .profile-title p {
   width: 100vw; /* Ancho relativo a la ventana */
   max-width: 100%; /* Evita que exceda el contenedor */
-  font-size: clamp(1.3rem, 2.5vw, 2rem);
+  font-size: clamp(1.3rem, 2.2vw, 3rem);
   font-weight: 500;
   text-align: center;
-  padding: 0 24px;
+  padding: 0 18px;
   overflow-wrap: break-word;
   word-break: break-word;
   animation-name: fadeInDown;
@@ -202,21 +201,24 @@ button {
   animation-delay: 0.3s;
   animation-fill-mode: forwards;
   will-change: transform, opacity;
-  
+}
+
+.profile-title span {
+  font-weight: 200;
 }
 
 .skills {
   width: 100%;
   height: 100vh;
   padding: 20vh 0;
-  background-color: white;
+  background-color: blue;
 }
 
 
 /* Hamburger Menu Styles */
 
 .ham {
-  padding:8px 5px 5px 5px;
+  padding-left: 10px;
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
   transition: transform 400ms;
@@ -237,7 +239,7 @@ button {
   fill:none;
   transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
   fill: none;
-  stroke:white;
+  stroke:black;
   stroke-width:5.5;
   stroke-linecap:round;
 }
@@ -260,7 +262,7 @@ button {
 
 @media (max-width: 378px) {
   .profile-title p {
-      font-size: clamp(1rem, 2vw, 1.5rem); /* Rango más pequeño para pantallas chicas */
+      font-size: clamp(0.8rem, 3vw, 1.5rem); /* Rango más pequeño para pantallas chicas */
       width: 90%; /* Texto más centrado y ajustado */
       padding: 0 5%; /* Espaciado en los bordes */
   }
