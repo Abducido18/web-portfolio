@@ -107,9 +107,9 @@ button {
 /* About Me Section */
 
 .about-me {
-  min-height: 100vh;
-  padding: 17vh 0; 
-  background-color: red;
+  margin-top: 10vh;
+  max-height: auto;
+  background-color: blue;
   will-change: transform, opacity;
   box-sizing: border-box;
   overflow: hidden;
@@ -117,9 +117,9 @@ button {
 
 
 .cover {
-  height: 100vh;
+  height: auto;
   width: 100%;
-  padding: 0 24px; /* Agrega el mismo padding lateral que la nav-bar */
+  padding: 2vh 24px; /* Agrega el mismo padding lateral que la nav-bar */
   display: flex;
   flex-direction: column;
   align-items: center;
