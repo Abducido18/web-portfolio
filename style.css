@@ -68,7 +68,7 @@ button {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 1000;;
+  z-index: 1000;
   background-color: blue ;
   border-bottom:1px solid black;
   display: flex;
@@ -128,10 +128,12 @@ button {
 
 .about-me {
   height: 100vh;
-  width: 100%;
+  height: calc(100vh - 20vh); /* Ajusta altura al padding */
+  padding: 10vh 0; /* Ajusta el espacio interno */
   background-color: red;
-  padding: 20vh 0;
+  will-change: transform, opacity;
 }
+
 
 .cover {
   height: auto;
