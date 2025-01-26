@@ -27,6 +27,10 @@ html, body {
   overflow-y: visible; 
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 li {
   list-style: none;
   background-color: #F5ECD5;
@@ -184,12 +188,12 @@ button {
 }
 
 .profile-title p {
-  width: 70vw; /* Ancho relativo a la ventana */
+  width: 100vw; /* Ancho relativo a la ventana */
   max-width: 100%; /* Evita que exceda el contenedor */
   font-size: clamp(1.3rem, 2.5vw, 2rem);
   font-weight: 500;
   text-align: center;
-  padding: 0 5vw;
+  padding: 0 24px;
   overflow-wrap: break-word;
   word-break: break-word;
   animation-name: fadeInDown;
