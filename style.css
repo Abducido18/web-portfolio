@@ -104,7 +104,7 @@ button {
 
 .about-me {
   min-height: 100vh;
-  padding: 20vh 0; 
+  padding: 17vh 0; 
   background-color: red;
   will-change: transform, opacity;
   box-sizing: border-box;
