@@ -5,6 +5,19 @@
 
 }
 
+@media screen and (min-width: 1024px) {
+  :root {
+      --biggest-font-size: 3rem;
+      --h1-font-size: 2.25rem;
+      --h2-font-size: 1.5rem;
+      --h3-font-size: 1.25rem;
+      --normal-font-size: 1rem;
+      --small-font-size: .875rem;
+      --smaller-font-size: .813rem;
+      --tiny-font-size: .688rem;
+  }
+}
+
 html, body {
   font-size: 16px;
   height: 100%;
@@ -44,13 +57,10 @@ button {
   padding: 0 24px;
   font-family: "Poppins", serif;
   color: white;
-  font-size: 18px;
   font-weight: 800;
   font-style: normal;
   will-change: transform;
   box-sizing: border-box;
-  
-  
 }
 
 .nav-menu{
@@ -81,7 +91,6 @@ button {
   font-family: "Poppins", serif;
   font-weight: 600;
   font-style: normal;
-  font-size: 18px;
   color: #3D3D3D;
 }
 
@@ -94,8 +103,8 @@ button {
 /* About Me Section */
 
 .about-me {
-  height: 100vh;
-  padding: 20vh 0; /* Ajusta el espacio interno */
+  min-height: 100vh;
+  padding: 10vh 0; 
   background-color: red;
   will-change: transform, opacity;
 }
