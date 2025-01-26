@@ -19,39 +19,6 @@ li {
   background-color: #F5ECD5;
 }
 
-@keyframes fadeInUp {
-  0% {
-    transform: translateY(-100px); /* Inicia más abajo */
-    opacity: 0; /* Comienza invisible */
-  }
-  100% {
-    transform: translateY(0); /* Llega a su posición original */
-    opacity: 1; /* Totalmente visible */
-  }
-}
-
-@keyframes fadeInDown {
-  0% {
-    transform: translateY(100px); /* Inicia más abajo */
-    opacity: 0; /* Comienza invisible */
-  }
-  100% {
-    transform: translateY(0); /* Llega a su posición original */
-    opacity: 1; /* Totalmente visible */
-  }
-}
-
-@keyframes fadeInLeft {
-  0% {
-    transform: translateX(-100px); /* Inicia más abajo */
-    opacity: 0; /* Comienza invisible */
-  }
-  100% {
-    transform: translateY(0); /* Llega a su posición original */
-    opacity: 1; /* Totalmente visible */
-  }
-}
-
 /* Nav Bar Menu*/
 
 nav a {
@@ -135,7 +102,7 @@ button {
 
 
 .cover {
-  height: auto;
+  height: 100vh;
   width: 100%;
   padding: 0 24px; /* Agrega el mismo padding lateral que la nav-bar */
   display: flex;
@@ -226,7 +193,7 @@ button {
 
 .skills {
   width: 100%;
-  height: 500px;
+  height: 100vh;
   background-color: white;
 }
 
@@ -275,10 +242,44 @@ button {
   stroke-dashoffset: -138px;
 }
 
+
 @media (max-width: 378px) {
   .profile-title p {
       font-size: clamp(1rem, 2vw, 1.5rem); /* Rango más pequeño para pantallas chicas */
       width: 90%; /* Texto más centrado y ajustado */
       padding: 0 5%; /* Espaciado en los bordes */
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    transform: translateY(-100px); /* Inicia más abajo */
+    opacity: 0; /* Comienza invisible */
+  }
+  100% {
+    transform: translateY(0); /* Llega a su posición original */
+    opacity: 1; /* Totalmente visible */
+  }
+}
+
+@keyframes fadeInDown {
+  0% {
+    transform: translateY(100px); /* Inicia más abajo */
+    opacity: 0; /* Comienza invisible */
+  }
+  100% {
+    transform: translateY(0); /* Llega a su posición original */
+    opacity: 1; /* Totalmente visible */
+  }
+}
+
+@keyframes fadeInLeft {
+  0% {
+    transform: translateX(-100px); /* Inicia más abajo */
+    opacity: 0; /* Comienza invisible */
+  }
+  100% {
+    transform: translateY(0); /* Llega a su posición original */
+    opacity: 1; /* Totalmente visible */
   }
 }
