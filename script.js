@@ -21,6 +21,16 @@ menuItems.forEach(item => {
   })
 })
 
+document.addEventListener('click', (event) => {
+  const isClickInsideMenu = navMenu.contains(event.target);
+  const isClickOnHam = hamSvg.contains(event.target);
+
+  if (!isClickInsideMenu && !isClickOnHam) {
+    navMenu.classList.remove('active'); // Cierra el menú
+    hamSvg.classList.remove('active'); // Ajusta el ícono
+  }
+});
+
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function(e) {
       e.preventDefault();

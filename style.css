@@ -1,5 +1,14 @@
 :root {
   --header-height: 3rem;
+  --h1-font-size: 1.5rem;
+  --h2-font-size: 1.25rem;
+  --h3-font-size: 1rem;
+  --normal-font-size: .938rem;
+  --small-font-size: .813rem;
+  --smaller-font-size: .75rem;
+  --tiny-font-size: .625rem;
+  --font-medium: 500;
+  --font-semi-bold: 600;
 }
 
 * {
@@ -60,18 +69,17 @@ header {
   box-sizing: border-box;
 }
 
-
 .nav-menu{
   position: fixed;
-  top: 6.5vh;
+  top: 0;
   left: -100%;
   width: 100%;
   text-align: center;
-  background-color: #F5ECD5;
+  background-color: rgba(66, 66, 66, 0.9);
   transition: 0.5s;
   margin: 0; 
 	padding: 0; 
-  z-index: 1000
+  z-index: 1001
   
 }
 
@@ -85,21 +93,20 @@ header {
   display: flex;
   flex-direction: column;
   width: 100%;
-	border-bottom:#FFFAEC 1px solid;
-  font-weight: 600;
+  font-weight: 300;
   font-style: normal;
-  color: #3D3D3D;
+  color: white;
 }
 
 .nav-item:hover{
-  background-color: white;
+  background-color: rgb(190, 190, 190)(66, 66, 66, 0.9);
   cursor: pointer;
 }
 
 
 /* About Me Section */
 
-.about-me {
+.home{
   margin-top: 8vh;
   height: 92vh;
   background-color: white;
@@ -107,7 +114,6 @@ header {
   box-sizing: border-box;
   overflow: hidden;
 }
-
 
 .cover {
   height: auto;
@@ -122,8 +128,8 @@ header {
 }
 
 .cover h1 {
-  font-size: 1.5rem;
-  font-weight: 600;
+  font-size: var(--h1-font-size);
+  font-weight: var(--font-medium);
   padding: 0 24px;
   margin-top: 5vh;
   margin-bottom: 5vh;
@@ -208,10 +214,7 @@ header {
 }
 
 .skills {
-  width: 100%;
-  height: 100vh;
-  padding: 20vh 0;
-  background-color: blue;
+
 }
 
 
@@ -226,13 +229,16 @@ header {
   -webkit-user-select: none;
   -ms-user-select: none;
   user-select: none;
+
 }
 
 .hamRotate.active {
   transform: rotate(45deg);
+
 }
 .hamRotate180.active {
   transform: rotate(180deg);
+
 }
 
 .line {
@@ -242,28 +248,33 @@ header {
   stroke:black;
   stroke-width:5.5;
   stroke-linecap:round;
+
 }
 
 .ham1 .top {
   stroke-dasharray: 40 139;
+
 }
 .ham1 .bottom {
   stroke-dasharray: 40 180;
+
 }
 
 .ham1.active .top {
   stroke-dashoffset: -98px;
+
 }
 
 .ham1.active .bottom {
   stroke-dashoffset: -138px;
+
 }
 
 
 @media (max-width: 378px) {
   .profile-title p {
       font-size: clamp(0.8rem, 3vw, 1.5rem); /* Rango más pequeño para pantallas chicas */
-      width: 90%; /* Texto más centrado y ajustado */
+      width: 100%; /* Texto más centrado y ajustado */
       padding: 0 5%; /* Espaciado en los bordes */
   }
 }
