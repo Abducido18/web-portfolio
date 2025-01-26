@@ -43,7 +43,7 @@ button {
 }
 
 .nav-bar{
-  height: 10vh;
+  height: 8vh;
   width: 100%;
   position: fixed;
   top: 0;
@@ -104,14 +104,16 @@ button {
 
 .about-me {
   min-height: 100vh;
-  padding: 10vh 0; 
+  padding: 15vh 0; 
   background-color: red;
   will-change: transform, opacity;
+  box-sizing: border-box;
+  overflow: hidden;
 }
 
 
 .cover {
-  height: 80vh;
+  height: 100vh;
   width: 100%;
   padding: 0 24px; /* Agrega el mismo padding lateral que la nav-bar */
   display: flex;
@@ -210,7 +212,7 @@ button {
 /* Hamburger Menu Styles */
 
 .ham {
-  padding:5px 5px 5px 5px;
+  padding:8px 5px 5px 5px;
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
   transition: transform 400ms;
