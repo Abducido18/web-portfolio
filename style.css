@@ -2,36 +2,102 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+
 }
 
-body {
+html, body {
   font-size: 16px;
+  height: auto;
   line-height: 1.5;
-  background-color: #FFFAEC ;
+  background-color: #3D3D3D ;
+  overflow-x: hidden; /* Evita scroll lateral */
+}
+
+li {
+  list-style: none;
+  background-color: #F5ECD5;
+}
+
+@keyframes fadeInUp {
+  0% {
+    transform: translateY(-100px); /* Inicia más abajo */
+    opacity: 0; /* Comienza invisible */
+  }
+  100% {
+    transform: translateY(0); /* Llega a su posición original */
+    opacity: 1; /* Totalmente visible */
+  }
+}
+
+@keyframes fadeInDown {
+  0% {
+    transform: translateY(100px); /* Inicia más abajo */
+    opacity: 0; /* Comienza invisible */
+  }
+  100% {
+    transform: translateY(0); /* Llega a su posición original */
+    opacity: 1; /* Totalmente visible */
+  }
+}
+
+@keyframes fadeInLeft {
+  0% {
+    transform: translateX(-100px); /* Inicia más abajo */
+    opacity: 0; /* Comienza invisible */
+  }
+  100% {
+    transform: translateY(0); /* Llega a su posición original */
+    opacity: 1; /* Totalmente visible */
+  }
+}
+
+/* Nav Bar Menu*/
+
+nav a {
+  all: unset;
+}
+
+button {
+  all: unset;
 }
 
 .nav-bar{
   height: 10vh;
-  background-color: white ;
-  border-bottom:1px solid #F5ECD5;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;;
+  background-color: blue ;
+  border-bottom:1px solid black;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0 24px;
+  font-family: "Poppins", serif;
+  color: white;
+  font-size: 18px;
+  font-weight: 800;
+  font-style: normal;
+  will-change: transform;
+  box-sizing: border-box;
+  
+  
 }
 
 .nav-menu{
   position: fixed;
   left: -100%;
-  top: 83px;
-  gap: 0;
-  flex-direction: column;
+  top: 9.8vh;
   width: 100%;
   text-align: center;
   background-color: #F5ECD5;
   transition: 0.5s;
   margin: 0; 
 	padding: 0; 
+  z-index: 1000;
+  overflow-y: auto;
+  
 }
 
 .nav-menu.active{
@@ -40,8 +106,16 @@ body {
 }
 
 .nav-item{
-	padding:15px 0 15px 0; 
+	padding: 15px 0 15px 0; 
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 	border-bottom:#FFFAEC 1px solid;
+  font-family: "Poppins", serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 18px;
+  color: #3D3D3D;
 }
 
 .nav-item:hover{
@@ -50,25 +124,165 @@ body {
 }
 
 
+/* About Me Section */
 
-
-li {
-  list-style: none;
-
-  background-color: #F5ECD5;
+.about-me {
+  height: 100vh;
+  width: 100%;
+  background-color: red;
+  padding: 20vh 0;
 }
 
-a {
-  color: black;
-  text-decoration: none;
+.cover {
+  height: auto;
+  width: 100%;
+  padding: 0 24px; /* Agrega el mismo padding lateral que la nav-bar */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  overflow: hidden; /* Evita desbordamientos */
 }
+
+.cover h1 {
+  font-size: 2.25rem;
+  margin-bottom: 3vh;
+  animation-name: fadeInUp;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+  animation-delay: 0.3s;
+  animation-fill-mode: forwards;
+  will-change: transform, opacity;
+  
+}
+
+.icons-container {
+  display: flex;
+  flex-direction: column;
+  animation-name: fadeInLeft;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+  animation-delay: 0.3s;
+  animation-fill-mode: forwards;
+  will-change: transform, opacity;
+}
+
+.linkedin-logo {
+  height: clamp(20px, 5vh, 50px);
+  fill:red;
+  
+}
+
+.mail-logo {
+  height: clamp(20px, 5vh, 50px);
+}
+
+.github-logo {
+  height: clamp(20px, 5vh, 50px);
+  fill:black;
+}
+
+.profile-image-container {
+  width: 100%;
+  margin-right: 7vw;
+  margin-bottom: 4vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-image {
+  height: 40vh; /* Reduce la altura */
+  width: auto;  /* Mantén el ancho proporcional */
+  object-fit: cover;
+  animation-name: fadeInUp;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+  animation-delay: 0.3s;
+  animation-fill-mode: forwards;
+  will-change: transform, opacity;
+}
+
+.profile-title p {
+  width: 70vw; /* Ancho relativo a la ventana */
+  max-width: 100%; /* Evita que exceda el contenedor */
+  font-size: clamp(1.3rem, 2.5vw, 2rem);
+  margin: clamp(10px, 2vw, 20px) 0;
+  font-weight: 500;
+  text-align: center;
+  padding: 0 5vw;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  animation-name: fadeInDown;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+  animation-delay: 0.3s;
+  animation-fill-mode: forwards;
+  will-change: transform, opacity;
+  
+}
+
+.skills h2 {
+  text-align: center;
+}
+
+.skills {
+  width: 100%;
+  height: 100vh;
+  background-color: white;
+}
+
+/* Skills Section*/
+
+.all_skills {
+  display: flex;
+  flex-direction: row;
+  flex-flow: wrap;
+}
+
+.skill {
+  border: 1px solid gray;
+  display: block;
+  border-radius: 6px;
+  text-align: center;
+  margin: 50px;
+  padding: 10px;
+  width: 2in;
+  font-size: 20px;
+  box-shadow: 0 3px 10px gray;
+}
+
+.skill img {
+  height: 55px;
+  align-items: center;
+}
+
+.skills h6 {
+  align-items: center;
+  font-size: 20px;
+  margin-block-start: 8px;
+  margin-block-end: 5px;
+  font-weight: bold;
+} 
+
+.skills p {
+  align-items: center;
+  font-size: 15px;
+  color: gray;
+  margin-block-start: 5px;
+  margin-block-end: 5px;
+} 
+
+.flex_center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* Hamburger Menu Styles */
 
 .ham {
   padding:5px 5px 5px 5px;
-  
-  position:absolute;
-  top:0;
-  right:0;
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
   transition: transform 400ms;
@@ -76,32 +290,43 @@ a {
   -webkit-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  
 }
+
 .hamRotate.active {
   transform: rotate(45deg);
 }
 .hamRotate180.active {
   transform: rotate(180deg);
 }
+
 .line {
   fill:none;
   transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
   fill: none;
-  stroke:#3D3D3D;
+  stroke:white;
   stroke-width:5.5;
   stroke-linecap:round;
 }
+
 .ham1 .top {
   stroke-dasharray: 40 139;
 }
 .ham1 .bottom {
   stroke-dasharray: 40 180;
 }
+
 .ham1.active .top {
   stroke-dashoffset: -98px;
 }
+
 .ham1.active .bottom {
   stroke-dashoffset: -138px;
 }
 
+@media (max-width: 378px) {
+  .profile-title p {
+      font-size: clamp(1rem, 2vw, 1.5rem); /* Rango más pequeño para pantallas chicas */
+      width: 90%; /* Texto más centrado y ajustado */
+      padding: 0 5%; /* Espaciado en los bordes */
+  }
+}
