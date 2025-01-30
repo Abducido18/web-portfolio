@@ -139,7 +139,7 @@ header {
 /* About Me Section */
 
 .home, .skills{
-  margin-top: 10vh;
+  margin-top: 8vh;
   height: 92vh;
   background-color: white;
   will-change: transform, opacity;
@@ -162,7 +162,7 @@ header {
   font-size: var(--h1-font-size);
   font-weight: var(--font-medium);
   padding: 0 24px;
-  margin-top: 8vh;
+  margin-top: 5vh;
   margin-bottom: 5vh;
   animation: myAnimTop 2s ease 0s 1 normal forwards;
   
