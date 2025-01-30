@@ -141,8 +141,7 @@ header {
 section {
   scroll-margin-top: var(--header-height);
 }
-.home, .skills{
-
+.home {
   height: 92vh;
   background-color: white;
   will-change: transform, opacity;
@@ -237,6 +236,14 @@ section {
 
 
 /******************************************************* SKILLS *********************************/
+
+.skills {
+  min-height: 92vh; /* En lugar de height */
+  background-color: white;
+  will-change: transform, opacity;
+  box-sizing: border-box;
+  overflow: hidden;
+}
 
 .skills-container {
   margin-top: 0;
