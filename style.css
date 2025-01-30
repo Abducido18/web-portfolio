@@ -9,6 +9,33 @@
   --tiny-font-size: .625rem;
   --font-medium: 500;
   --font-semi-bold: 600;
+  --shadow-color: 0deg 0% 68%;
+  --shadow-elevation-low-left:
+  1px 0px 1.2px hsl(var(--shadow-color) / 0.22),
+  1.6px 0px 1.9px -1px hsl(var(--shadow-color) / 0.26),
+  3.7px 0px 4.5px -1.9px hsl(var(--shadow-color) / 0.3);
+  --shadow-elevation-low-right:
+  -1px 0px 1.2px hsl(var(--shadow-color) / 0.22),
+  -1.6px 0px 1.9px -1px hsl(var(--shadow-color) / 0.26),
+  -3.7px 0px 4.5px -1.9px hsl(var(--shadow-color) / 0.3);
+  --shadow-elevation-low:
+    0px 0.8px 1px hsl(var(--shadow-color) / 0.22),
+    0px 1.4px 1.7px -1px hsl(var(--shadow-color) / 0.26),
+    0.1px 3.1px 3.7px -1.9px hsl(var(--shadow-color) / 0.3);
+  --shadow-elevation-medium:
+    0.5px 0.3px 0.7px hsl(var(--shadow-color) / 0.34),
+    1.5px 0.8px 1.9px -0.8px hsl(var(--shadow-color) / 0.34),
+    3.7px 2px 4.7px -1.7px hsl(var(--shadow-color) / 0.34),
+    8.9px 5px 11.5px -2.5px hsl(var(--shadow-color) / 0.34);
+  --shadow-elevation-high:
+    0.5px 0.3px 0.7px hsl(var(--shadow-color) / 0.32),
+    2.5px 1.4px 3.2px -0.4px hsl(var(--shadow-color) / 0.32),
+    4.7px 2.7px 6.1px -0.7px hsl(var(--shadow-color) / 0.32),
+    7.8px 4.3px 10px -1.1px hsl(var(--shadow-color) / 0.32),
+    12.4px 6.9px 16px -1.4px hsl(var(--shadow-color) / 0.32),
+    19.3px 10.8px 24.9px -1.8px hsl(var(--shadow-color) / 0.32),
+    29.4px 16.5px 37.9px -2.1px hsl(var(--shadow-color) / 0.32),
+    43.3px 24.3px 55.9px -2.5px hsl(var(--shadow-color) / 0.32);
 }
 
 * {
@@ -33,9 +60,12 @@ html {
   scroll-behavior: smooth;
 }
 
+ul {
+  all: unset;
+}
+
 li {
   list-style: none;
-  background-color: #F5ECD5;
 }
 
 /* Nav Bar Menu*/
@@ -67,15 +97,17 @@ header {
   font-style: normal;
   will-change: transform;
   box-sizing: border-box;
+  position: relative;
 }
 
 .nav-menu{
   position: fixed;
-  top: 0;
+  top: 8vh;
   left: -100%;
   width: 100%;
   text-align: center;
-  background-color: rgba(66, 66, 66, 0.9);
+  background-color: hsla(0, 0%, 0%, .75 );
+  backdrop-filter: blur(8px);
   transition: 0.5s;
   margin: 0; 
 	padding: 0; 
@@ -106,8 +138,8 @@ header {
 
 /* About Me Section */
 
-.home{
-  margin-top: 8vh;
+.home, .skills{
+  margin-top: 10vh;
   height: 92vh;
   background-color: white;
   will-change: transform, opacity;
@@ -115,8 +147,7 @@ header {
   overflow: hidden;
 }
 
-.cover {
-  height: auto;
+.home-container, .skills-container {
   width: 100%;
   padding: 2vh 24px; /* Agrega el mismo padding lateral que la nav-bar */
   display: flex;
@@ -127,30 +158,20 @@ header {
   overflow: hidden; /* Evita desbordamientos */
 }
 
-.cover h1 {
+.home-container h1 {
   font-size: var(--h1-font-size);
   font-weight: var(--font-medium);
   padding: 0 24px;
-  margin-top: 5vh;
+  margin-top: 8vh;
   margin-bottom: 5vh;
-  animation-name: fadeInUp;
-  animation-duration: 1s;
-  animation-timing-function: ease-out;
-  animation-delay: 0.3s;
-  animation-fill-mode: forwards;
-  will-change: transform, opacity;
+  animation: myAnimTop 2s ease 0s 1 normal forwards;
   
 }
 
 .icons-container {
   display: flex;
   flex-direction: column;
-  animation-name: fadeInLeft;
-  animation-duration: 1s;
-  animation-timing-function: ease-out;
-  animation-delay: 0.3s;
-  animation-fill-mode: forwards;
-  will-change: transform, opacity;
+  animation: myAnimLeft 2s ease 0s 1 normal forwards;
 }
 
 .linkedin-logo {
@@ -176,6 +197,7 @@ header {
   flex-direction: row;
   justify-content: center;
   align-items: center;
+
 }
 
 .profile-image {
@@ -184,12 +206,8 @@ header {
   padding: 5px 5px 5px 5px;
   border-left: 1px solid black;
   object-fit: cover;
-  animation-name: fadeInUp;
-  animation-duration: 1s;
-  animation-timing-function: ease-out;
-  animation-delay: 0.3s;
-  animation-fill-mode: forwards;
-  will-change: transform, opacity;
+  animation: myAnimRight 2s ease 0s 1 normal forwards;
+
 }
 
 .profile-title p {
@@ -213,9 +231,78 @@ header {
   font-weight: 200;
 }
 
-.skills {
 
+/******************************************************* SKILLS *********************************/
+
+.card-container-top {
+  display: flex;
+  width: 100%; 
+  flex-direction: row; 
+  justify-content: space-around;
+  margin-top: 7vh;
+  box-shadow: var(--shadow-elevation-low-right);
+  animation: skillsAnimRight 2s ease 0s 1 normal forwards;
 }
+
+.card-container-middle {
+  display: flex;
+  width: 100%; 
+  flex-direction: row; 
+  justify-content: space-around;
+  margin-top: 7vh;
+  box-shadow: var(--shadow-elevation-low-left);
+  animation: skillsAnimLeft 2s ease 0s 1 normal forwards;
+}
+
+.card-container-bottom {
+  display: flex;
+  width: 100%; 
+  flex-direction: row; 
+  justify-content: space-around;
+  margin-top: 7vh;
+  box-shadow: var(--shadow-elevation-low);
+  animation: skillsAnimBottom 2s ease 0s 1 normal forwards;
+}
+
+
+.card {
+  display: flex; 
+  flex-direction: column; 
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-radius: 16px  16px 16px 16px;
+  width: 30%;
+  overflow: hidden; 
+  border-color: #000000;
+}
+
+.card-img-container {
+  width: 100%;
+  height: 7vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-img-container img {
+  width: 100%;
+  height: 100%;;
+  object-fit: contain;
+}
+
+.skills h3 {
+  font-size: clamp(0.8rem, 3vw, 1.5rem); /* Rango más pequeño para pantallas chicas */
+}
+
+
+
+
+
+
+
+
 
 
 /* Hamburger Menu Styles */
@@ -229,15 +316,20 @@ header {
   -webkit-user-select: none;
   -ms-user-select: none;
   user-select: none;
-
+  position: absolute;
+  top: 0;
+  right: 20px;
+  z-index: 10002;
 }
 
 .hamRotate.active {
   transform: rotate(45deg);
 
+
 }
 .hamRotate180.active {
   transform: rotate(180deg);
+
 
 }
 
@@ -245,23 +337,23 @@ header {
   fill:none;
   transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
   fill: none;
-  stroke:black;
+  stroke:rgb(49, 49, 49);
   stroke-width:5.5;
   stroke-linecap:round;
-
 }
 
 .ham1 .top {
   stroke-dasharray: 40 139;
-
 }
+
 .ham1 .bottom {
   stroke-dasharray: 40 180;
-
 }
+
 
 .ham1.active .top {
   stroke-dashoffset: -98px;
+
 
 }
 
@@ -277,7 +369,16 @@ header {
       width: 100%; /* Texto más centrado y ajustado */
       padding: 0 5%; /* Espaciado en los bordes */
   }
+
+  .card p {
+    font-size: clamp(0.7rem, 3vw, 1.5rem); /* Rango más pequeño para pantallas chicas */
+    font-weight: 500;
+    text-align: center;
+  }
 }
+
+/************************************************ ANIMATIONS ****************************************/
+
 
 @keyframes fadeInUp {
   0% {
@@ -310,4 +411,77 @@ header {
     transform: translateY(0); /* Llega a su posición original */
     opacity: 1; /* Totalmente visible */
   }
+}
+
+@keyframes myAnimRight {
+	0% {
+		opacity: 0;
+		transform: translateX(100px);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+
+@keyframes myAnimLeft {
+	0% {
+		opacity: 0;
+		transform: translateX(-50px);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateX(0);
+	}
+  
+}
+
+@keyframes myAnimTop {
+	0% {
+		opacity: 0;
+		transform: translateY(-50px);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@keyframes skillsAnimLeft {
+	0% {
+		opacity: 0;
+		transform: translateX(-250px);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+
+@keyframes skillsAnimRight {
+	0% {
+		opacity: 0;
+		transform: translateX(250px);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+
+@keyframes skillsAnimBottom {
+	0% {
+		opacity: 0;
+		transform: translateY(250px);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
 }
