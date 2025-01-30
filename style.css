@@ -54,10 +54,12 @@ html, body {
   overflow-y: visible; 
   font-family: "Poppins", serif;
   background-color: white;
+  
 }
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: var(--header-height); /* Ajusta el valor según la altura de tu navbar */
 }
 
 ul {
@@ -137,9 +139,11 @@ header {
 
 
 /* About Me Section */
-
+section {
+  scroll-margin-top: var(--header-height);
+}
 .home, .skills{
-  margin-top: 8vh;
+
   height: 92vh;
   background-color: white;
   will-change: transform, opacity;
@@ -148,6 +152,7 @@ header {
 }
 
 .home-container, .skills-container {
+  margin-top: 8vh;
   width: 100%;
   padding: 2vh 24px; /* Agrega el mismo padding lateral que la nav-bar */
   display: flex;
