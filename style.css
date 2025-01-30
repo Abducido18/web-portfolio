@@ -59,7 +59,6 @@ html, body {
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: var(--header-height); /* Ajusta el valor según la altura de tu navbar */
 }
 
 ul {
