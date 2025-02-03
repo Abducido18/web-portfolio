@@ -236,10 +236,6 @@ section {
 
 /******************************************************* SKILLS *************************************************************/
 
-.skills {
-  height: auto;
-}
-
 .title {
   font-size: var(--h1-font-size);
   font-weight: var(--font-medium);
@@ -303,10 +299,6 @@ section {
 }
 
 /******************************************************* PROJECTS *************************************************************/
-
-.projects {
-  height: auto;
-}
 
 .project-card-container {
   display: flex;
