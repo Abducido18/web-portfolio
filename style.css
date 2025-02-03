@@ -9,33 +9,25 @@
   --tiny-font-size: .625rem;
   --font-medium: 500;
   --font-semi-bold: 600;
-  --shadow-color: 0deg 0% 68%;
-  --shadow-elevation-low-left:
-  1px 0px 1.2px hsl(var(--shadow-color) / 0.22),
-  1.6px 0px 1.9px -1px hsl(var(--shadow-color) / 0.26),
-  3.7px 0px 4.5px -1.9px hsl(var(--shadow-color) / 0.3);
-  --shadow-elevation-low-right:
-  -1px 0px 1.2px hsl(var(--shadow-color) / 0.22),
-  -1.6px 0px 1.9px -1px hsl(var(--shadow-color) / 0.26),
-  -3.7px 0px 4.5px -1.9px hsl(var(--shadow-color) / 0.3);
+  --shadow-color: 0deg 0% 63%;
   --shadow-elevation-low:
-    0px 0.8px 1px hsl(var(--shadow-color) / 0.22),
-    0px 1.4px 1.7px -1px hsl(var(--shadow-color) / 0.26),
-    0.1px 3.1px 3.7px -1.9px hsl(var(--shadow-color) / 0.3);
+    0.4px 0.3px 0.6px hsl(var(--shadow-color) / 0.32),
+    0.6px 0.5px 0.9px -1.2px hsl(var(--shadow-color) / 0.33),
+    1.5px 1.3px 2.3px -2.3px hsl(var(--shadow-color) / 0.35);
   --shadow-elevation-medium:
-    0.5px 0.3px 0.7px hsl(var(--shadow-color) / 0.34),
-    1.5px 0.8px 1.9px -0.8px hsl(var(--shadow-color) / 0.34),
-    3.7px 2px 4.7px -1.7px hsl(var(--shadow-color) / 0.34),
-    8.9px 5px 11.5px -2.5px hsl(var(--shadow-color) / 0.34);
+    0.4px 0.3px 0.6px hsl(var(--shadow-color) / 0.33),
+    1.2px 1.1px 1.9px -0.8px hsl(var(--shadow-color) / 0.35),
+    3px 2.7px 4.7px -1.5px hsl(var(--shadow-color) / 0.36),
+    7.3px 6.5px 11.3px -2.3px hsl(var(--shadow-color) / 0.38);
   --shadow-elevation-high:
-    0.5px 0.3px 0.7px hsl(var(--shadow-color) / 0.32),
-    2.5px 1.4px 3.2px -0.4px hsl(var(--shadow-color) / 0.32),
-    4.7px 2.7px 6.1px -0.7px hsl(var(--shadow-color) / 0.32),
-    7.8px 4.3px 10px -1.1px hsl(var(--shadow-color) / 0.32),
-    12.4px 6.9px 16px -1.4px hsl(var(--shadow-color) / 0.32),
-    19.3px 10.8px 24.9px -1.8px hsl(var(--shadow-color) / 0.32),
-    29.4px 16.5px 37.9px -2.1px hsl(var(--shadow-color) / 0.32),
-    43.3px 24.3px 55.9px -2.5px hsl(var(--shadow-color) / 0.32);
+    0.4px 0.3px 0.6px hsl(var(--shadow-color) / 0.31),
+    2.3px 2px 3.5px -0.3px hsl(var(--shadow-color) / 0.32),
+    4.2px 3.7px 6.5px -0.7px hsl(var(--shadow-color) / 0.32),
+    6.8px 6.1px 10.6px -1px hsl(var(--shadow-color) / 0.33),
+    10.6px 9.5px 16.4px -1.3px hsl(var(--shadow-color) / 0.34),
+    16.4px 14.7px 25.4px -1.6px hsl(var(--shadow-color) / 0.34),
+    24.8px 22.2px 38.4px -2px hsl(var(--shadow-color) / 0.35),
+    36.3px 32.6px 56.4px -2.3px hsl(var(--shadow-color) / 0.36);
 }
 
 * {
@@ -54,6 +46,7 @@ html, body {
   overflow-y: visible; 
   font-family: "Poppins", serif;
   background-color: white;
+
   
 }
 
@@ -73,6 +66,7 @@ li {
 
 nav a {
   all: unset;
+
 }
 
 button {
@@ -103,7 +97,7 @@ header {
 
 .nav-menu{
   position: fixed;
-  top: 8vh;
+  top: 7vh;
   left: -100%;
   width: 100%;
   text-align: center;
@@ -129,6 +123,7 @@ header {
   font-weight: 300;
   font-style: normal;
   color: white;
+  
 }
 
 .nav-item:hover{
@@ -141,15 +136,15 @@ header {
 section {
   scroll-margin-top: var(--header-height);
 }
-.home {
-  height: 92vh;
+.home, .skills, .projects {
+  height: 100vh;
   background-color: white;
   will-change: transform, opacity;
   box-sizing: border-box;
   overflow: hidden;
 }
 
-.home-container, .skills-container {
+.home-container, .skills-container, .projects-container {
   margin-top: 8vh;
   width: 100%;
   padding: 2vh 24px; /* Agrega el mismo padding lateral que la nav-bar */
@@ -200,7 +195,6 @@ section {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-
 }
 
 .profile-image {
@@ -235,50 +229,38 @@ section {
 }
 
 
-/******************************************************* SKILLS *********************************/
+/******************************************************* SKILLS *************************************************************/
 
-.skills {
-  min-height: 92vh; /* En lugar de height */
-  background-color: white;
-  will-change: transform, opacity;
-  box-sizing: border-box;
-  overflow: hidden;
+.title {
+  font-size: var(--h1-font-size);
+  font-weight: var(--font-medium);
+  padding: 0 24px;
+  margin-top: 6vh;
+  opacity: 0;
 }
 
-.skills-container {
+.title.visible {
+  animation: myAnimTop 2s ease 0s 1 normal forwards;
+  opacity: 1;
+}
+
+.skills-container, .projects-container {
   margin-top: 0;
 }
 
-.card-container-top {
+.card-container {
   display: flex;
   width: 100%; 
   flex-direction: row; 
   justify-content: space-around;
   margin-top: 7vh;
-  box-shadow: var(--shadow-elevation-low-right);
-  animation: skillsAnimRight 2s ease 0s 1 normal forwards;
+  opacity: 0;
 }
 
-.card-container-middle {
-  display: flex;
-  width: 100%; 
-  flex-direction: row; 
-  justify-content: space-around;
-  margin-top: 7vh;
-  box-shadow: var(--shadow-elevation-low-left);
+.card-container.visible {
+  opacity: 1;
   animation: skillsAnimLeft 2s ease 0s 1 normal forwards;
 }
-
-.card-container-bottom {
-  display: flex;
-  width: 100%; 
-  flex-direction: row; 
-  justify-content: space-around;
-  margin-top: 7vh;
-  box-shadow: var(--shadow-elevation-low);
-  animation: skillsAnimBottom 2s ease 0s 1 normal forwards;
-}
-
 
 .card {
   display: flex; 
@@ -286,7 +268,6 @@ section {
   justify-content: space-between;
   align-items: center;
   padding: 10px;
-  border-radius: 16px  16px 16px 16px;
   width: 30%;
   overflow: hidden; 
   border-color: #000000;
@@ -311,13 +292,58 @@ section {
   font-size: clamp(0.8rem, 3vw, 1.5rem); /* Rango más pequeño para pantallas chicas */
 }
 
+/******************************************************* PROJECTS *************************************************************/
 
+.project-card-container {
+  display: flex;
+  height: 75vh;
+  width: 100%; 
+  flex-direction: row; 
+  justify-content: space-around;
+  margin-top: 5vh;
+  opacity: 0;
+}
 
+.project-card-container.visible {
+  opacity: 1;
+  animation: skillsAnimLeft 2s ease 0s 1 normal forwards;
+}
 
+.project-card {
+  display: flex; 
+  flex-direction: column; 
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px;
+  border-radius: 16px  16px 16px 16px;
+  width: 100%;
+  overflow: hidden; 
+  border-color: #000000;
+  box-shadow: var(--shadow-elevation-medium);
+}
 
+.project-card-img-container {
+  width: 100%;
+  height: 50vh;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
 
+.project-card-img-container img {
+  width: 100%;
+  height: 100%;;
+  border-radius: 10px;
+  object-fit: contain;
+}
 
-
+.project-card h3 {
+  font-size: clamp(0.8rem, 3vw, 1.5rem); /* Rango más pequeño para pantallas chicas */
+  font-weight: 600;
+  align-self: baseline;
+}
 
 
 /* Hamburger Menu Styles */
@@ -378,6 +404,10 @@ section {
 }
 
 
+
+
+
+
 @media (max-width: 378px) {
   .profile-title p {
       font-size: clamp(0.8rem, 3vw, 1.5rem); /* Rango más pequeño para pantallas chicas */
@@ -385,10 +415,14 @@ section {
       padding: 0 5%; /* Espaciado en los bordes */
   }
 
-  .card p {
+  .card p, .project-card p {
     font-size: clamp(0.7rem, 3vw, 1.5rem); /* Rango más pequeño para pantallas chicas */
-    font-weight: 500;
+    font-weight: 300;
     text-align: center;
+  }
+
+  .project-card p {
+    text-align: left;
   }
 }
 

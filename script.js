@@ -1,3 +1,19 @@
+document.addEventListener('DOMContentLoaded', () => {
+  const animatedElements = document.querySelectorAll('.title, .card-container, .project-card-container');
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if ( entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.3 });
+
+  animatedElements.forEach(elements => observer.observe(elements));
+});
+
+
 const navMenu = document.querySelector('.nav-menu')
 const hamSvg = document.querySelector('.ham');
 const hamButton = document.querySelector('.ham-button');
@@ -31,9 +47,9 @@ document.addEventListener('click', (event) => {
   }
 });
 
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function(e) {
-      e.preventDefault();
+document.querySelectorAll('.nav-item').forEach(anchor => {
+  anchor.addEventListener('click', function(event) {
+      event.preventDefault();
       const target = document.querySelector(this.getAttribute('href'));
       target.scrollIntoView({ behavior: 'smooth' });
   });
