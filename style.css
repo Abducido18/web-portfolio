@@ -236,6 +236,10 @@ section {
 
 /******************************************************* SKILLS *************************************************************/
 
+.skills {
+  height: auto;
+}
+
 .title {
   font-size: var(--h1-font-size);
   font-weight: var(--font-medium);
@@ -294,10 +298,15 @@ section {
 }
 
 .skills h3 {
-  font-size: clamp(0.8rem, 3vw, 1.5rem); /* Rango más pequeño para pantallas chicas */
+  font-size: clamp(0.8rem, 3vw, 1.5rem);
+  font-weight: 600;
 }
 
 /******************************************************* PROJECTS *************************************************************/
+
+.projects {
+  height: auto;
+}
 
 .project-card-container {
   display: flex;
@@ -459,7 +468,7 @@ section {
 
 
 
-@media (max-width: 378px) {
+@media (max-width: 768px) {
   .profile-title p {
       font-size: clamp(0.8rem, 3vw, 1.5rem); /* Rango más pequeño para pantallas chicas */
       width: 100%; /* Texto más centrado y ajustado */
