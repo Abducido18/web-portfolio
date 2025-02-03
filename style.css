@@ -295,10 +295,7 @@ section {
 
 /******************************************************* PROJECTS *************************************************************/
 
-.projects {
-  height: calc(100vh - var(--header-height)); /* 100vh menos la altura de la barra de navegación */
-  padding: 0 24px;  /* El padding lateral es suficiente, pero no agregues padding-top */
-}
+
 
 .project-card-container {
   display: flex;
