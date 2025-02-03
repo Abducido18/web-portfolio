@@ -479,11 +479,6 @@ section {
   }
 }
 
-@media (max-width: 768px) {
-  .slider-nav {
-    top: 10rem; /* Ajusta el valor para pantallas más pequeñas */
-  }
-}
 
 /************************************************ ANIMATIONS ****************************************/
 
