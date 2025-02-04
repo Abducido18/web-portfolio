@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const animatedElements = document.querySelectorAll('.title, .card-container, .project-card-container');
+  const animatedElements = document.querySelectorAll('.title, .card-container, .slider-wrapper');
 
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
@@ -12,7 +12,25 @@ document.addEventListener('DOMContentLoaded', () => {
 
   animatedElements.forEach(elements => observer.observe(elements));
 
-  
+  const sliderNavLinks = document.querySelectorAll('.slider-nav a');
+  const slider = document.querySelector('.slider');
+
+
+
+
+
+  sliderNavLinks.forEach(link => {
+    link.addEventListener('click', function(event) {
+      event.preventDefault();
+      const slideId = this.getAttribute('href');
+      const slide = document.querySelector(slideId);
+      slider.scrollTo({
+        left: slide.offsetLeft,
+        behavior: 'smooth'
+      });
+      setTimeout(() => { isClicking = false; }, 1000); // Permite que el desplazamiento termine antes de permitir actualizaciones
+    });
+  });
 });
 
 
