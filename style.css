@@ -95,7 +95,6 @@ header {
   will-change: transform;
   box-sizing: border-box;
   position: relative;
-
 }
 
 .nav-menu{
@@ -316,7 +315,6 @@ section {
 
 .project-card-img-container {
   width: 100%;
-  height: 50vh;
   margin-bottom: 1vh;
 }
 
