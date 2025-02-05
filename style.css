@@ -9,6 +9,7 @@
   --tiny-font-size: .625rem;
   --font-medium: 500;
   --font-semi-bold: 600;
+  --text-color: hsl(0, 0%, 35%);
   --shadow-color: 0deg 0% 63%;
   --shadow-elevation-low-nav:
     0px 0.7px 0.9px hsl(var(--shadow-color) / 0.22),
@@ -64,6 +65,16 @@ li {
   list-style: none;
 }
 
+h2 {
+  font-size: var(--h2-font-size);
+  font-weight: var(--font-medium);
+}
+
+h3 {
+  font-size: var(--h3-font-size);
+  font-weight: var(--font-medium);
+}
+
 .separator {
   color: black;
   align-items: center;
@@ -71,7 +82,7 @@ li {
   border-bottom: 1px solid black;
   display: block; /* Asegura que el elemento ocupe el ancho completo disponible */
   margin: 0 auto; /* Centra el elemento horizontalmente */
-  margin-top: var(--header-height);
+  margin-top: 2rem;
 }
 
 /* Nav Bar Menu*/
@@ -223,10 +234,10 @@ section {
 .profile-title p {
   width: 100vw; /* Ancho relativo a la ventana */
   max-width: 100%; /* Evita que exceda el contenedor */
-  font-size: clamp(1.3rem, 2.2vw, 3rem);
+  font-size: clamp(1rem, 3vw, 1.5rem); /* Rango más pequeño para pantallas chicas */
   font-weight: 500;
   text-align: center;
-  padding: 0 18px;
+  padding: 0 5%;
   overflow-wrap: break-word;
   word-break: break-word;
   animation-name: fadeInDown;
@@ -283,16 +294,19 @@ section {
 
 .card-img-container {
   width: 100%;
-  height: 7vh;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
+  max-width: 10vw;
+}
+
+.card p {
+  font-size: clamp(0.7rem, 3vw, 1.5rem); /* Rango más pequeño para pantallas chicas */
+  font-weight: 300;
+  text-align: center;
+  color: var(--text-color);
 }
 
 .card-img-container img {
   width: 100%;
-  height: 100%;;
+  height: auto;;
   object-fit: contain;
 }
 
@@ -319,7 +333,6 @@ section {
   border-radius: 16px  16px 16px 16px;
   width: 100%;
   overflow: hidden; 
-  border-color: #000000;
   box-shadow: var(--shadow-elevation-medium);
 }
 
@@ -338,6 +351,14 @@ section {
   display:flex;
   flex-direction: column;
   width: 100%;
+}
+
+.project-card-text p {
+  text-align: left;
+  font-size: clamp(0.7rem, 3vw, 1.5rem); /* Rango más pequeño para pantallas chicas */
+  font-weight: 300;
+  align-self: baseline;
+  color: var(--text-color);
 }
 
 .project-card h3 {
@@ -386,18 +407,82 @@ section {
   width: 0.5rem;
   height: 0.5rem;
   border-radius: 50%;
-  background-color: #fff;
+  background-color: #8b8b8b;
   opacity: 0.75;
   transition: opacity ease 250ms;
 }
 
-.slider-nav a:hover{
+.slider-nav a:hover, .slider-nav a.active {
   opacity: 1;
+  background-color: #fff;
 }
 
 
+/******************************************************* EDUCATION *************************************************************/
+
+.education {
+  height: 100vh;
+}
 
 
+.certification-container {
+  display: flex;
+  max-width: 100%;
+  flex-direction: column; 
+  align-self: baseline;
+  align-items: baseline;
+  opacity: 0;
+  margin-top: 5vh;
+  padding: 0 24px;
+}
+
+.certification-container.visible {
+  opacity: 1;
+  animation: myAnimLeft 2s ease 0s 1 normal forwards;
+}
+
+.certification {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.5rem;
+  max-width: 100%;
+
+}
+
+.certification-container h2 {
+  font-size: var(--h2-font-size);
+  font-weight: 400;
+  margin-bottom: 0.50rem;
+}
+
+.certification h3 {
+  font-size: clamp(0.8rem, 3vw, 1.5rem);
+  font-weight: 400;
+  align-self: baseline;
+}
+
+.certification p {
+  font-size: clamp(0.7rem, 3vw, 1.5rem);
+  font-weight: 200;
+  color: var(--text-color);
+  font-weight: var(--font-medium);
+  align-self: baseline;
+}
+
+.certification a {
+  font-size: clamp(0.7rem, 3vw, 1.5rem);
+  transition: color 0.3s ease;
+  align-self: baseline;
+  text-decoration: none;
+}
+
+.certification a:hover {
+  color: var(--text-color-hover);
+}
+
+.degree {
+  margin-top: 1rem;
+}
 
 /* Hamburger Menu Styles */
 
@@ -455,24 +540,11 @@ section {
 
 
 @media (max-width: 768px) {
-  .profile-title p {
-      font-size: clamp(1rem, 3vw, 1.5rem); /* Rango más pequeño para pantallas chicas */
-      width: 100%; /* Texto más centrado y ajustado */
-      padding: 0 5%; /* Espaciado en los bordes */
-  }
 
-  .card p {
-    font-size: clamp(0.7rem, 3vw, 1.5rem); /* Rango más pequeño para pantallas chicas */
-    font-weight: 300;
-    text-align: center;
-  }
 
-  .project-card p {
-    text-align: left;
-    font-size: clamp(0.7rem, 3vw, 1.5rem); /* Rango más pequeño para pantallas chicas */
-    font-weight: 300;
-    align-self: baseline;
-  }
+
+
+
 
 }
 
