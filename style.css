@@ -85,7 +85,9 @@ h3 {
   margin-top: 2rem;
 }
 
-/* Nav Bar Menu*/
+/*******************************
+ *  HEADER
+ *******************************/
 
 nav a {
   all: unset;
@@ -160,7 +162,13 @@ header {
 }
 
 
-/* Home Section */
+/*******************************
+ *  HOME
+ *******************************/
+.name {
+  display: none;
+}
+
 section {
   scroll-margin-top: var(--header-height);
 }
@@ -253,7 +261,9 @@ section {
 }
 
 
-/******************************************************* SKILLS *************************************************************/
+/*******************************
+ *  SKILLS
+ *******************************/
 
 .title {
   font-size: var(--h1-font-size);
@@ -297,6 +307,12 @@ section {
   max-width: 10vw;
 }
 
+.card-img-container img {
+  width: 100%;
+  height: auto;;
+  object-fit: contain;
+}
+
 .card p {
   font-size: clamp(0.7rem, 3vw, 1.5rem); /* Rango más pequeño para pantallas chicas */
   font-weight: 300;
@@ -304,18 +320,14 @@ section {
   color: var(--text-color);
 }
 
-.card-img-container img {
-  width: 100%;
-  height: auto;;
-  object-fit: contain;
-}
-
 .skills h3 {
   font-size: clamp(0.8rem, 3vw, 1.5rem);
   font-weight: 600;
 }
 
-/******************************************************* PROJECTS *************************************************************/
+/*******************************
+ *  PROJECTS
+ *******************************/
 
 .project-card-container { 
   padding: 0 8px;
@@ -418,7 +430,9 @@ section {
 }
 
 
-/******************************************************* EDUCATION *************************************************************/
+/*******************************
+ *  EDUCATION
+ *******************************/
 
 .education {
   height: 100vh;
@@ -484,7 +498,325 @@ section {
   margin-top: 1rem;
 }
 
-/* Hamburger Menu Styles */
+@media (min-width: 1201px) {
+
+  .separator {
+    color: black;
+    align-items: center;
+    width: 68%;
+    border-bottom: 1px solid black;
+    display: block; /* Asegura que el elemento ocupe el ancho completo disponible */
+    margin: 0 auto; /* Centra el elemento horizontalmente */
+    margin-top: 2rem;
+  }
+  
+/*******************************
+*  HEADER
+*******************************/
+  .nav-branding {
+    text-align: center;
+    width: 50px;
+  }
+  
+  .nav-bar{
+    height: 6vh;
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 300px;
+    color: black;
+    font-weight: 200;
+    font-style: normal;
+    position: unset;
+  }
+
+  .nav-menu{
+    position:unset;
+    display: flex;
+    justify-content: space-around;
+    width: 70%;
+    background-color: #fff;
+    backdrop-filter: unset;
+    z-index: 0;
+  }
+
+  .nav-menu.active{
+    left: 0;
+    height: auto;
+  }
+
+  .nav-item{
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    font-weight: 300;
+    color: black;
+  }
+
+  .nav-item:hover{
+    color:#8b8b8b;
+    background-color: #fff;
+    cursor: pointer;
+  }
+
+
+/*******************************
+*  HOME
+*******************************/
+
+ section {
+    scroll-margin-top: var(--header-height);
+  }
+
+  .home, .skills, .projects, .education {
+    height: auto;
+    width: 100%;
+    padding: 6vh 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    overflow: hidden;
+    background-color: white;
+    will-change: transform, opacity;
+    box-sizing: border-box;
+  }
+
+  .home {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+
+  .home h1 {
+    display: none;
+  }
+
+  .profile-image-container {
+    width: auto;
+    order: 2;
+    margin-bottom: 0;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: unset;
+    align-items: unset;
+  }
+
+  .profile-image {
+    height: 50vh; /* Reduce la altura */
+    width: auto;  /* Mantén el ancho proporcional */
+    padding: 5px 5px 5px 5px;
+    border-left: none;
+    object-fit: cover;
+    animation: myAnimRight 2s ease 0s 1 normal forwards;
+  }
+
+  .icons-container {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    animation: myAnimRight 2s ease 0s 1 normal forwards;
+  }
+
+  .profile-title {
+    padding-right: 100px;
+  }
+  .profile-title h1 {
+    display: block;
+    font-size: clamp(4.5rem, 3vw, 5.5rem);
+    text-align: left;
+    padding: 0;
+  }
+
+  .profile-title p {
+    width: auto; /* Ancho relativo a la ventana */
+    max-width: 100%; /* Evita que exceda el contenedor */
+    font-size: clamp(1rem, 3vw, 1.5rem); /* Rango más pequeño para pantallas chicas */
+    font-weight: 500;
+    text-align: left;
+    overflow-wrap: unset;
+    word-break: unset;
+    border-left: 1px solid black;
+    animation: fadeInDown 2s ease 0s 1 normal forwards;
+  }
+  
+  .profile-title span {
+    font-weight: 200;
+  }
+
+  .mail-logo {
+  height: clamp(20px, 5vh, 50px);
+  }
+
+  .github-logo {
+  height: clamp(20px, 5vh, 50px);
+  fill:black;
+  }
+
+/*******************************
+*  SKILLS
+*******************************/
+
+  
+  .title {
+    font-size: clamp(2.5rem, 3vw, 3.5rem);
+    font-weight: var(--font-medium);
+    padding: 0;
+    margin-top: 6vh;
+  }
+
+  .card-container {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 10vh;
+    gap: 1rem; /* Añadir un espacio entre las tarjetas */
+    width: 100%;
+  }
+  
+  .card {
+    text-align: center; /* Centrar el contenido de las tarjetas */
+    padding: 1rem; /* Añadir padding interno */
+    background-color: #fff; /* Fondo blanco para las tarjetas */
+  }
+  
+  .card-img-container {
+    width: 20%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .card-img-container img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .card h3 {
+    margin-top: 1rem;
+    font-size: 1.2rem;
+  }
+  
+  .card p {
+    margin-top: 0.5rem;
+    font-size: 1rem;
+  }
+
+  .skills {
+    margin-bottom: 10vh;;
+  }
+/*******************************
+ *  PROJECTS
+ *******************************/
+
+ .slider-wrapper {
+  position: relative;
+  max-width: 100%;
+  opacity: 0;
+  margin-top: 10vh;
+  margin-bottom: 10vh
+}
+
+.slider-wrapper.visible {
+  opacity: 1;
+  animation: myAnimLeft 2s ease 0s 1 normal forwards;
+}
+
+.slider {
+  display: flex;
+  overflow-x:unset; 
+  scroll-snap-type:none;
+  padding: 1rem 0;
+  scroll-behavior: smooth;
+  -ms-overflow-style:initial; /* Hide scrollbar IE and Edge */
+	scrollbar-width: initial; /* Hide scrollbar Firefox */
+}
+
+.slider::-webkit-scrollbar {
+	display: block;
+}
+
+.slider-nav {
+  display: none;
+
+}
+
+
+ .project-card-container { 
+  padding: 0 8px;
+  scroll-snap-align:unset;
+  flex: unset;
+  max-width: 100%;
+
+}
+
+.project-card {
+  display: flex; 
+  flex-direction: column; 
+  align-items: center;
+  padding: 10px;
+  border-radius: 16px;
+  width: 100%;
+  overflow: hidden; 
+  box-shadow: var(--shadow-elevation-medium);
+}
+
+.project-card-img-container {
+  width: 100%;
+  margin-bottom: 1vh;
+}
+
+.project-card-img-container img {
+  width: 100%;
+  border-radius: 16px 16px 16px 16px;
+  object-fit: contain;
+}
+
+.project-card-text {
+  display:flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.project-card-text p {
+  text-align: left;
+  font-size: clamp(0.7rem, 3vw, 1rem); /* Rango más pequeño para pantallas chicas */
+  font-weight: 300;
+  align-self: baseline;
+  color: var(--text-color);
+}
+
+.project-card h3 {
+  font-size: clamp(0.8rem, 3vw, 1.5rem);
+  font-weight: 600;
+  align-self: baseline;
+}
+
+
+
+  /*******************************
+ *  HAMGURGER MENU
+ *******************************/
+
+ .ham-button {
+  display: none;
+
+ } 
+ 
+ .ham {
+    display: none;
+    
+  }
+}
+
+
+
+
+/*******************************
+ *  HAMGURGER MENU
+ *******************************/
 
 .ham {
   padding-left: 10px;
@@ -529,24 +861,13 @@ section {
 
 .ham1.active .top {
   stroke-dashoffset: -98px;
-
-
 }
 
 .ham1.active .bottom {
   stroke-dashoffset: -138px;
-
 }
 
 
-@media (max-width: 768px) {
-
-
-
-
-
-
-}
 
 
 /************************************************ ANIMATIONS ****************************************/
