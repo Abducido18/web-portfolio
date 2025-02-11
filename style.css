@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 :root {
   --header-height: 3rem;
   --h1-font-size: 1.5rem;
@@ -45,7 +47,6 @@
 html, body {
   font-size: 16px;
   line-height: 1.5;
-
   font-family: "Poppins", serif;
   background-color: white;
   box-sizing: border-box;
@@ -96,6 +97,11 @@ nav a {
 .nav-branding {
   text-align: center;
   width: 50px;
+}
+
+.nav-branding:hover {
+  cursor: pointer;
+  color: rgba(66, 66, 66, 0.9);
 }
 
 button {
@@ -513,9 +519,18 @@ section {
 /*******************************
 *  HEADER
 *******************************/
+
   .nav-branding {
-    text-align: center;
-    width: 50px;
+    font-weight: 400;
+    display:flex;
+    color: white;
+    background-color: black;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    font-size: 1rem;
+    width: 36px;
+    height: 36px;
   }
   
   .nav-bar{
@@ -549,7 +564,7 @@ section {
     padding: 0;
     display: flex;
     flex-direction: column;
-    font-weight: 300;
+    font-weight: 400;
     color: black;
   }
 
@@ -559,7 +574,9 @@ section {
     cursor: pointer;
   }
 
-
+  .nav-item.selected {
+    background-color: green;
+  }
 /*******************************
 *  HOME
 *******************************/
@@ -568,7 +585,7 @@ section {
     scroll-margin-top: var(--header-height);
   }
 
-  .home, .skills, .projects, .education {
+  .home, .skills, .projects, .education, .contact-me {
     height: auto;
     width: 100%;
     padding: 6vh 300px;
@@ -597,11 +614,11 @@ section {
   .profile-image-container {
     width: auto;
     order: 2;
-    margin-bottom: 0;
+    margin:0;
     display: flex;
     flex-direction: column-reverse;
     justify-content: unset;
-    align-items: unset;
+    align-items: center;
   }
 
   .profile-image {
@@ -647,12 +664,12 @@ section {
   }
 
   .mail-logo {
-  height: clamp(20px, 5vh, 50px);
+    height: clamp(20px, 5vh, 50px);
   }
 
   .github-logo {
-  height: clamp(20px, 5vh, 50px);
-  fill:black;
+    height: clamp(20px, 5vh, 50px);
+    fill:black;
   }
 
 /*******************************
@@ -673,16 +690,21 @@ section {
     margin-top: 10vh;
     gap: 1rem; /* Añadir un espacio entre las tarjetas */
     width: 100%;
+    justify-content: space-around;
+
   }
   
   .card {
     text-align: center; /* Centrar el contenido de las tarjetas */
     padding: 1rem; /* Añadir padding interno */
     background-color: #fff; /* Fondo blanco para las tarjetas */
+    justify-content: space-around;
+    width: auto;
+
   }
   
   .card-img-container {
-    width: 20%;
+    width: 30%;
     height: auto;
     display: flex;
     justify-content: center;
@@ -693,112 +715,197 @@ section {
     max-width: 100%;
     height: auto;
   }
-  
+
+  .js {
+    width: 17%;
+  }
+
   .card h3 {
-    margin-top: 1rem;
+    margin-top: 1vh;
     font-size: 1.2rem;
   }
   
   .card p {
-    margin-top: 0.5rem;
     font-size: 1rem;
   }
 
   .skills {
     margin-bottom: 10vh;;
   }
+
+  .update {
+    opacity: 0;
+  }
+
 /*******************************
  *  PROJECTS
  *******************************/
 
- .slider-wrapper {
-  position: relative;
-  max-width: 100%;
-  opacity: 0;
-  margin-top: 10vh;
-  margin-bottom: 10vh
-}
+  .slider-wrapper {
+    position: relative;
+    max-width: 100%;
+    opacity: 0;
+    margin-top: 10vh;
+    margin-bottom: 10vh
+  }
 
-.slider-wrapper.visible {
-  opacity: 1;
-  animation: myAnimLeft 2s ease 0s 1 normal forwards;
-}
+  .slider-wrapper.visible {
+    opacity: 1;
+    animation: myAnimLeft 2s ease 0s 1 normal forwards;
+  }
 
-.slider {
-  display: flex;
-  overflow-x:unset; 
-  scroll-snap-type:none;
-  padding: 1rem 0;
-  scroll-behavior: smooth;
-  -ms-overflow-style:initial; /* Hide scrollbar IE and Edge */
-	scrollbar-width: initial; /* Hide scrollbar Firefox */
-}
+  .slider {
+    display: flex;
+    overflow-x:unset; 
+    scroll-snap-type:none;
+    padding: 1rem 0;
+    scroll-behavior: smooth;
+    -ms-overflow-style:initial; /* Hide scrollbar IE and Edge */
+    scrollbar-width: initial; /* Hide scrollbar Firefox */
+  }
 
-.slider::-webkit-scrollbar {
-	display: block;
-}
+  .slider::-webkit-scrollbar {
+    display: block;
+  }
 
-.slider-nav {
-  display: none;
+  .slider-nav {
+    display: none;
+  }
 
-}
+  .project-card-container { 
+    padding: 0 8px;
+    scroll-snap-align:unset;
+    flex: unset;
+    max-width: 100%;
 
+  }
 
- .project-card-container { 
-  padding: 0 8px;
-  scroll-snap-align:unset;
-  flex: unset;
-  max-width: 100%;
+  .project-card {
+    display: flex; 
+    flex-direction: column; 
+    align-items: center;
+    padding: 10px;
+    border-radius: 16px;
+    width: 100%;
+    overflow: hidden; 
+    box-shadow: var(--shadow-elevation-medium);
+  }
 
-}
+  .project-card-img-container {
+    width: 100%;
+    margin-bottom: 1vh;
+  }
 
-.project-card {
-  display: flex; 
-  flex-direction: column; 
-  align-items: center;
-  padding: 10px;
-  border-radius: 16px;
-  width: 100%;
-  overflow: hidden; 
-  box-shadow: var(--shadow-elevation-medium);
-}
+  .project-card-img-container img {
+    width: 100%;
+    border-radius: 16px 16px 16px 16px;
+    object-fit: contain;
+  }
 
-.project-card-img-container {
-  width: 100%;
-  margin-bottom: 1vh;
-}
+  .project-card-text {
+    display:flex;
+    flex-direction: column;
+    width: 100%;
+  }
 
-.project-card-img-container img {
-  width: 100%;
-  border-radius: 16px 16px 16px 16px;
-  object-fit: contain;
-}
+  .project-card-text p {
+    text-align: left;
+    font-size: clamp(0.7rem, 3vw, 1rem); /* Rango más pequeño para pantallas chicas */
+    font-weight: 300;
+    align-self: baseline;
+    color: var(--text-color);
+  }
 
-.project-card-text {
-  display:flex;
-  flex-direction: column;
-  width: 100%;
-}
+  .project-card h3 {
+    font-size: clamp(0.8rem, 3vw, 1.5rem);
+    font-weight: 600;
+    align-self: baseline;
+  }
 
-.project-card-text p {
-  text-align: left;
-  font-size: clamp(0.7rem, 3vw, 1rem); /* Rango más pequeño para pantallas chicas */
-  font-weight: 300;
-  align-self: baseline;
-  color: var(--text-color);
-}
-
-.project-card h3 {
-  font-size: clamp(0.8rem, 3vw, 1.5rem);
-  font-weight: 600;
-  align-self: baseline;
-}
-
-
-
-  /*******************************
- *  HAMGURGER MENU
+/*******************************
+ *  EDUCATION
  *******************************/
+
+  .education {
+    height: auto;
+  }
+
+  .education-container {
+    display: flex; 
+    flex-direction: row;
+    justify-content: space-around;
+    align-self: flex-start;
+    width: 100%;
+  }
+
+  .certification-container {
+    display: flex;
+    flex-direction: column; 
+    align-self: baseline;
+    align-items: baseline;
+    opacity: 0;
+    margin-top: 5vh;
+    padding: 0;
+  }
+
+  .certification-container.visible {
+    opacity: 1;
+    animation: myAnimLeft 2s ease 0s 1 normal forwards;
+  }
+
+  .certification {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 3rem;
+    max-width: 100%;
+  }
+
+  .certification-container h2 {
+    font-size: clamp(1rem, 3vw, 2rem);
+    font-weight: 500;
+    margin-bottom: 3vh;    
+  }
+
+  .certification h3 {
+    font-size: clamp(0.8rem, 3vw, 1.4rem);
+    font-weight: 400;
+    align-self: baseline;
+  }
+
+  .certification p {
+    font-size: clamp(0.7rem, 3vw, 1.3rem);
+    font-weight: 200;
+    color: var(--text-color);
+    font-weight: var(--font-medium);
+    align-self: baseline;
+  }
+
+  .certification a {
+    font-size: clamp(0.7rem, 3vw, 1.3rem);
+    transition: color 0.3s ease;
+    align-self: baseline;
+    text-decoration: none;
+  }
+
+  .certification a:hover {
+    color: var(--text-color-hover);
+  }
+
+  .degree {
+    margin-top: 1rem;
+  }
+/*******************************
+*  CONTACT ME
+*******************************/
+
+.contact-me {
+  height: 100vh;
+}
+
+
+/*******************************
+*  HAMGURGER MENU
+*******************************/
 
  .ham-button {
   display: none;

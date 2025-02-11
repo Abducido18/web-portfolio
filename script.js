@@ -1,5 +1,28 @@
 document.addEventListener('DOMContentLoaded', () => {
   const animatedElements = document.querySelectorAll('.title, .card-container, .slider-wrapper, .certification-container');
+  const sections = document.querySelectorAll('section');
+  console.log(sections);
+
+  const sectionObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        // Remover la clase 'selected' de todos los elementos del menú
+        menuItems.forEach(item => item.classList.remove('selected'));
+
+        // Agregar la clase 'selected' al elemento del menú correspondiente
+        const id = entry.target.getAttribute('id');
+        const navItem = document.querySelector(`.nav-menu a[href="#${id}"]`);
+        console.log(id);
+        if (navItem) {
+          navItem.classList.add('selected');
+        }
+      }
+    });
+  }, { threshold: [0.5, 0.9] });
+
+  sections.forEach(section => sectionObserver.observe(section));
+
+
 
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
