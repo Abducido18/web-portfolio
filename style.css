@@ -127,12 +127,12 @@ header {
   z-index: 1000;
 }
 .nav-bar{
-  height: var(--header-height);
+  height: 3rem;
   background-color: white;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 18px;
+  padding: 0 30px;
   color: black;
   font-weight: 200;
   font-style: normal;
@@ -141,6 +141,20 @@ header {
   position: relative;
   box-shadow: var(--shadow-elevation-low-nav);
 }
+@media (max-width: 375px) {
+  .nav-bar {
+    height: 3rem;
+    padding-top: 6px;
+  }
+
+  .nav-branding {
+    width: 3.5vh;
+    height: 3.5vh;
+    font-size: 0.9rem;
+  }
+}
+
+
 
 .nav-menu{
   position: fixed;
@@ -155,6 +169,10 @@ header {
 	padding: 0; 
   z-index: 1001;
   
+}
+.ham-button {
+  display: flex;
+  align-items: center;
 }
 
 .nav-menu.active{
@@ -190,7 +208,7 @@ header {
 .home, .skills, .projects, .education {
   width: 100%;
   height: 100vh;
-  padding: 0 24px;
+  padding: 0 30px;
   display: flex;
   justify-content: space-around;
   flex-direction: column;
@@ -203,14 +221,14 @@ header {
 }
 
 .home {
-  margin-top: 6vh;
+  justify-content: unset;
+  margin-bottom: vh;
 }
 
 .home h1 {
-  margin-top: 0;
+  margin-top: 18vh;
   font-size: clamp(1.9rem, 5vw, 5.5rem);
   font-weight: var(--font-medium);
-  margin-bottom: 5vh;
   width: 100%;
   animation: myAnimTop 2s ease 0s 1 normal forwards;
 }
@@ -236,10 +254,15 @@ header {
   fill:black;
 }
 
+.profile-title {
+  margin-top: 3vh;
+  margin-bottom: -15vh;
+}
+
 .profile-image-container {
   width: 100%;
   margin-right: 7vw;
-  margin-top: -20vh;
+  margin-top: 3vh;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -256,30 +279,38 @@ header {
 
 }
 
+
+
 .profile-title p {
   width: 100%; /* Ancho relativo a la ventana */
   font-size: clamp(0.8rem, 3vw, 1rem); /* Rango más pequeño para pantallas chicas */
   font-weight: 300;
   text-align: center;
   padding: 0 36px;
-  animation: fadeInDown;
-  margin-top: -20vh;
+  animation: fadeInDown 2s ease 0s 1 normal forwards;;
+}
+
+@media (max-width: 375px) {
+  .profile-title p {
+    font-size: 0.7rem;
+  }
 }
 
 .profile-title span {
   font-weight: 500;
 }
 
+
 /*******************************
  *  SKILLS
  *******************************/
 
 .title {
-  font-size: var(--h1-font-size);
+  font-size: 2rem;
   font-weight: var(--font-medium);
   padding: 0 24px;
   opacity: 0;
-  margin-bottom: -5vh;
+  margin-bottom: -10vh;
 }
 
 .title.visible {
@@ -303,7 +334,7 @@ header {
 .card {
   display: flex; 
   flex-direction: column; 
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   padding: 10px;
   width: 30%;
@@ -312,13 +343,22 @@ header {
 }
 
 .card-img-container {
-  width: 100%;
-  max-width: 10vw;
+  width: 5vh;
+  height: 5vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .card-img-container img {
   width: 100%;
   height: auto;;
+  object-fit: contain;
+}
+
+.js img {
+  width: 90%;
+  height: auto;
   object-fit: contain;
 }
 
@@ -341,19 +381,20 @@ header {
 /*******************************
  *  PROJECTS
  *******************************/
- .slider-wrapper {
+
+.projects {
   position: relative;
-  max-width: 48rem;
-  opacity: 0;
-  margin-top: -10vh;
 }
 
-.slider-wrapper.visible {
-  opacity: 1;
-  animation: myAnimLeft 2s ease 0s 1 normal forwards;
+.projects .title {
+
+  margin-top: -5vh;
+  margin-bottom: -25vh;
 }
 
 .slider {
+
+  position: relative;
   display: flex;
   overflow-x: auto; 
   scroll-snap-type: x mandatory;
@@ -361,6 +402,12 @@ header {
   scroll-behavior: smooth;
   -ms-overflow-style: none; /* Hide scrollbar IE and Edge */
 	scrollbar-width: none; /* Hide scrollbar Firefox */
+  opacity: 0;
+}
+
+.slider.visible {
+  opacity: 1;
+  animation: myAnimLeft 2s ease 0s 1 normal forwards;
 }
 
 .slider::-webkit-scrollbar {
@@ -371,10 +418,18 @@ header {
   display: flex;
   column-gap: 1rem;
   position: absolute;
-  bottom: 10rem;
-  left: 50%;
+  bottom: 35.5vh;
+  left: 45%;
   transform: translateX(-50%);
   z-index: 1;
+  opacity: 0;
+}
+
+
+
+.slider-nav.visible {
+  opacity: 1;
+  animation: myAnimLeft 2s ease 0s 1 normal forwards;
 }
 
 .slider-nav a {
@@ -392,7 +447,7 @@ header {
 }
 
 .project-card-container { 
-  padding: 0 8px;
+  padding: 0 10px;
   scroll-snap-align: start;
   flex: 0 0 100%; /* Cada carta ocupa el 100% del ancho del contenedor */
   max-width: 100%;
@@ -412,18 +467,20 @@ header {
 .project-card-img-container {
   width: 100%;
   margin-bottom: 1vh;
+
 }
 
 .project-card-img-container img {
   width: 100%;
   border-radius: 16px 16px 16px 16px;
-  object-fit: contain;
+
 }
 
 .project-card-text {
   display:flex;
   flex-direction: column;
   width: 100%;
+  height: 13vh;
 }
 
 .project-card-text p {
@@ -512,13 +569,6 @@ header {
   margin-top: 1rem;
 }
 
-
-
-
-
-
-
-
 /*******************************
  *  HAMGURGER MENU
  *******************************/
@@ -571,6 +621,130 @@ header {
 .ham1.active .bottom {
   stroke-dashoffset: -138px;
 }
+
+@media (min-width: 768px) {
+  .nav-bar {
+    padding: 0 10vh;
+  }
+
+  /*******************************
+ *  HOME
+ *******************************/
+  .name {
+    display: none;
+  }
+
+
+  .home, .skills, .projects, .education {
+    width: 100%;
+    height: 100vh;
+    padding: 0 10vh;
+    display: flex;
+  }
+
+  .home {
+    margin-top: 0;
+  }
+
+  .home h1 {
+    margin-top: 0;
+    font-size: 3rem;
+    font-weight: var(--font-medium);
+    margin-bottom: 5vh;
+    width: 100%;
+    animation: myAnimTop 2s ease 0s 1 normal forwards;
+    text-align: center;
+    margin-bottom: -5vh;
+  }
+
+  .profile-title {
+    margin-bottom: -15vh;
+  }
+
+  .icons-container {
+    display: flex;
+    flex-direction: column;
+    animation: myAnimLeft 2s ease 0s 1 normal forwards;
+  }
+
+
+  .mail-logo {
+    height: 35px;
+  }
+
+  .github-logo {
+    height: 35px;
+    fill:black;
+  }
+
+  .profile-image-container {
+    width: 100%;
+    margin-right: 7vw;
+    margin-top: -20vh;
+    
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .profile-image {
+    height: 40vh; /* Reduce la altura */
+    width: auto;  /* Mantén el ancho proporcional */
+    padding: 5px 5px 5px 5px;
+    border-left: 1px solid black;
+    object-fit: cover;
+    animation: myAnimRight 2s ease 0s 1 normal forwards;
+
+  }
+
+  .profile-title p {
+    width: 100%; /* Ancho relativo a la ventana */
+    font-size: clamp(0.8rem, 3vw, 1rem); /* Rango más pequeño para pantallas chicas */
+    font-weight: 300;
+    text-align: center;
+    padding: 0 36px;
+    animation: fadeInDown;
+    margin-top: -25vh;
+  }
+
+  .profile-title span {
+    font-weight: 500;
+  }
+
+/*******************************
+*  SKILLS
+*******************************/
+
+  .title {
+    font-size: 3rem;
+  }
+  
+  .card-container.visible {
+    opacity: 1;
+    animation: myAnimLeft 2s ease 0s 1 normal forwards;
+  }
+  
+  .card-img-container {
+    width: 100%;
+    max-width: 6vw;
+    height: 6vh;
+  }
+
+  .skills h3 {
+    font-size: 1.2rem;
+  }
+  
+  .card p {
+    font-size: 1rem; /* Rango más pequeño para pantallas chicas */
+  }
+  
+/*******************************
+*  PROJECTS
+*******************************/
+
+}
+
 @media (min-width: 1200px) {
   .separator {
     color: black;
@@ -729,7 +903,8 @@ header {
   }
   
   .card-img-container {
-    width: 30%;
+    max-width: 6vw;
+    height: 6vh;
     height: auto;
     display: flex;
     justify-content: center;
@@ -741,10 +916,10 @@ header {
     height: auto;
   }
 
-  .js {
+  /*.js {
     width: 17%;
   }
-
+*/
   .card h3 {
     margin-top: 1vh;
     font-size: 1.2rem;
@@ -777,7 +952,6 @@ header {
     width: 100vh;
     max-width: unset;
     height: 100%;
-
   }
 
   .slider-wrapper.visible {
@@ -956,15 +1130,14 @@ height: 100vh;
 *  HAMGURGER MENU
 *******************************/
 
-.ham-button {
-display: none;
+  .ham-button {
+    display: none;
 
-} 
+  } 
 
-.ham {
-  display: none;
-  
-}
+  .ham {
+    display: none;
+  }
 
 }
 
@@ -1109,14 +1282,11 @@ display: none;
   .project-card-img-container {
     width: 80%;
     height: unset;
-    margin-bottom: 1vh;
+
   }
 
   .project-card-img-container img {
     width: 100%;
-    height: auto;
-    border-radius: 16px 16px 16px 16px;
-    object-fit: contain;
   }
   
 

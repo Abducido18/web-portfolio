@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const animatedElements = document.querySelectorAll('.title, .card-container, .slider-wrapper, .certification-container');
+  const animatedElements = document.querySelectorAll('.title, .card-container, .slider, .slider-nav, .certification-container');
   const sections = document.querySelectorAll('section');
   console.log(sections);
 
