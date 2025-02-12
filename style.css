@@ -86,6 +86,8 @@ h3 {
   margin-top: 2rem;
 }
 
+
+
 /*******************************
  *  HEADER
  *******************************/
@@ -94,14 +96,23 @@ nav a {
   all: unset;
 }
 
+
 .nav-branding {
-  text-align: center;
-  width: 50px;
+  font-weight: 400;
+  display:flex;
+  color: white;
+  background-color: black;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  font-size: 1rem;
+  width: 4vh;
+  height: 4vh;
 }
 
 .nav-branding:hover {
   cursor: pointer;
-  color: rgba(66, 66, 66, 0.9);
+  color: white;
 }
 
 button {
@@ -196,7 +207,7 @@ header {
 }
 
 .home h1 {
-  margin-top: 6vh;
+  margin-top: 0;
   font-size: clamp(1.9rem, 5vw, 5.5rem);
   font-weight: var(--font-medium);
   margin-bottom: 5vh;
@@ -228,6 +239,7 @@ header {
 .profile-image-container {
   width: 100%;
   margin-right: 7vw;
+  margin-top: -20vh;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -246,86 +258,17 @@ header {
 
 .profile-title p {
   width: 100%; /* Ancho relativo a la ventana */
-
-  font-size: clamp(1rem, 3vw, 1.5rem); /* Rango más pequeño para pantallas chicas */
+  font-size: clamp(0.8rem, 3vw, 1rem); /* Rango más pequeño para pantallas chicas */
   font-weight: 300;
   text-align: center;
   padding: 0 36px;
   animation: fadeInDown;
+  margin-top: -20vh;
 }
 
 .profile-title span {
   font-weight: 500;
 }
-
-@media (min-width: 1201px) {
-  .home, .skills, .projects, .education, .contact-me {
-    height: auto;
-    padding: 6vh 30vh;
-    justify-content: unset;
-    overflow: hidden;
-    background-color: white;
-    will-change: transform, opacity;
-  }
-
-  .home {
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-  }
-
-  .home h1 {
-    display: none;
-  }
-
-  .profile-image-container {
-    width: auto;
-    order: 2;
-    margin:0;
-    display: flex;
-    flex-direction: column-reverse;
-    justify-content: unset;
-    align-items: center;
-  }
-
-  .profile-image {
-    height: 50vh; /* Reduce la altura */
-    width: auto;  /* Mantén el ancho proporcional */
-    padding: 1vh;
-    border-left: none;
-    object-fit: cover;
-    animation: myAnimRight 2s ease 0s 1 normal forwards;
-  }
-
-  .icons-container {
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    animation: myAnimRight 2s ease 0s 1 normal forwards;
-  }
-
-  .profile-title {
-
-  }
-  .profile-title h1 {
-    display: block;
-    font-size: clamp(3.5rem, 5vw, 5.5rem);
-    text-align: left;
-    padding: 0;
-  }
-
-  .profile-title p {
-    width: 100vh; /* Ancho relativo a la ventana */ /* Evita que exceda el contenedor */
-    text-align: left;
-    overflow-wrap: unset;
-    word-break: unset;
-    border-left: 1px solid black;
-    animation: fadeInDown 2s ease 0s 1 normal forwards;
-  }
-  
-}
-
 
 /*******************************
  *  SKILLS
@@ -391,67 +334,9 @@ header {
   font-weight: 600;
 }
 
-@media (min-width: 1201px) {
-  .title {
-    font-size: clamp(2.5rem, 3vw, 3.5rem);
-    font-weight: var(--font-medium);
-    padding: 0;
-    margin-top: 6vh;
-    margin-bottom: 0;
-  }
 
-  .card-container {
-    display: flex;
-    flex-wrap: wrap;
-    margin-top: 10vh;
-    gap: 1rem; /* Añadir un espacio entre las tarjetas */
-    width: 100%;
-    justify-content: space-around;
-
-  }
-  
-  .card {
-    text-align: center; /* Centrar el contenido de las tarjetas */
-    padding: 1rem; /* Añadir padding interno */
-    background-color: #fff; /* Fondo blanco para las tarjetas */
-    justify-content: space-around;
-    width: auto;
-
-  }
-  
-  .card-img-container {
-    width: 30%;
-    height: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .card-img-container img {
-    max-width: 100%;
-    height: auto;
-  }
-
-  .js {
-    width: 17%;
-  }
-
-  .card h3 {
-    margin-top: 1vh;
-    font-size: 1.2rem;
-  }
-  
-  .card p {
-    font-size: 1rem;
-  }
-
-  .skills {
-    margin-bottom: 10vh;;
-  }
-
-  .update {
-    opacity: 0;
-  }
+.update {
+  opacity: 0;
 }
 /*******************************
  *  PROJECTS
@@ -566,7 +451,11 @@ header {
   align-items: unset;
 }
 
+.education .title {
+  margin-bottom: -15vh;
+}
 .certification-container {
+  
   display: flex;
   max-width: 100%;
   flex-direction: column; 
@@ -623,270 +512,9 @@ header {
   margin-top: 1rem;
 }
 
-@media (min-width: 1201px) {
-
-  .separator {
-    color: black;
-    align-items: center;
-    width: 70%;
-    border-bottom: 1px solid black;
-    margin: 0 auto; /* Centra el elemento horizontalmente */
-    margin-top: 5vh;
-  }
-  
-/*******************************
-*  HEADER
-*******************************/
-
-  .nav-branding {
-    font-weight: 400;
-    display:flex;
-    color: white;
-    background-color: black;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%;
-    font-size: 1rem;
-    width: 4vh;
-    height: 4vh;
-  }
-  
-  .nav-bar{
-    height: 6vh;
-    background-color: #fff;
-    display: flex;
-    justify-content: space-between;
-    padding: 0 30vh;
-    color: black;
-    font-weight: 200;
-    font-style: normal;
-    position: unset;
-  }
-
-  .nav-menu{
-    position:unset;
-    display: flex;
-    justify-content: space-around;
-    width: 70%;
-    background-color: #fff;
-    backdrop-filter: unset;
-    z-index: 0;
-  }
-
-  .nav-menu.active{
-    left: 0;
-    height: auto;
-  }
-
-  .nav-item{
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    font-weight: 400;
-    color: black;
-  }
-
-  .nav-item:hover{
-    color:#8b8b8b;
-    background-color: #fff;
-    cursor: pointer;
-  }
-
-  .nav-item.selected {
-    background-color: green;
-  }
-/*******************************
-*  HOME
-*******************************/
- 
-
-/*******************************
-*  SKILLS
-*******************************/
-
-  
 
 
-/*******************************
- *  PROJECTS
- *******************************/
 
-  .slider-wrapper {
-    position: relative;
-    max-width: 100%;
-    opacity: 0;
-    margin-top: 10vh;
-    margin-bottom: 10vh
-  }
-
-  .slider-wrapper.visible {
-    opacity: 1;
-    animation: myAnimLeft 2s ease 0s 1 normal forwards;
-  }
-
-  .slider {
-    display: flex;
-    overflow-x:unset; 
-    scroll-snap-type:none;
-    padding: 1rem 0;
-    scroll-behavior: smooth;
-    -ms-overflow-style:initial; /* Hide scrollbar IE and Edge */
-    scrollbar-width: initial; /* Hide scrollbar Firefox */
-  }
-
-  .slider::-webkit-scrollbar {
-    display: block;
-  }
-
-  .slider-nav {
-    display: none;
-  }
-
-  .project-card-container { 
-    padding: 0 8px;
-    scroll-snap-align:unset;
-    flex: unset;
-    max-width: 100%;
-
-  }
-
-  .project-card {
-    display: flex; 
-    flex-direction: column; 
-    align-items: center;
-    padding: 10px;
-    border-radius: 16px;
-    width: 100%;
-    overflow: hidden; 
-    box-shadow: var(--shadow-elevation-medium);
-  }
-
-  .project-card-img-container {
-    width: 100%;
-    margin-bottom: 1vh;
-  }
-
-  .project-card-img-container img {
-    width: 100%;
-    border-radius: 16px 16px 16px 16px;
-    object-fit: contain;
-  }
-
-  .project-card-text {
-    display:flex;
-    flex-direction: column;
-    width: 100%;
-  }
-
-  .project-card-text p {
-    text-align: left;
-    font-size: clamp(0.7rem, 3vw, 1rem); /* Rango más pequeño para pantallas chicas */
-    font-weight: 300;
-    align-self: baseline;
-    color: var(--text-color);
-  }
-
-  .project-card h3 {
-    font-size: clamp(0.8rem, 3vw, 1.5rem);
-    font-weight: 600;
-    align-self: baseline;
-  }
-
-/*******************************
- *  EDUCATION
- *******************************/
-
-  .education {
-    height: auto;
-  }
-
-  .education-container {
-    display: flex; 
-    flex-direction: row;
-    justify-content: space-around;
-    align-self: flex-start;
-    width: 100%;
-  }
-
-  .certification-container {
-    display: flex;
-    flex-direction: column; 
-    align-self: baseline;
-    align-items: baseline;
-    opacity: 0;
-    margin-top: 5vh;
-    padding: 0;
-  }
-
-  .certification-container.visible {
-    opacity: 1;
-    animation: myAnimLeft 2s ease 0s 1 normal forwards;
-  }
-
-  .certification {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 3rem;
-    max-width: 100%;
-  }
-
-  .certification-container h2 {
-    font-size: clamp(1rem, 3vw, 2rem);
-    font-weight: 500;
-    margin-bottom: 3vh;    
-  }
-
-  .certification h3 {
-    font-size: clamp(0.8rem, 3vw, 1.4rem);
-    font-weight: 400;
-    align-self: baseline;
-  }
-
-  .certification p {
-    font-size: clamp(0.7rem, 3vw, 1.3rem);
-    font-weight: 200;
-    color: var(--text-color);
-    font-weight: var(--font-medium);
-    align-self: baseline;
-  }
-
-  .certification a {
-    font-size: clamp(0.7rem, 3vw, 1.3rem);
-    transition: color 0.3s ease;
-    align-self: baseline;
-    text-decoration: none;
-  }
-
-  .certification a:hover {
-    color: var(--text-color-hover);
-  }
-
-  .degree {
-    margin-top: 1rem;
-  }
-/*******************************
-*  CONTACT ME
-*******************************/
-
-.contact-me {
-  height: 100vh;
-}
-
-
-/*******************************
-*  HAMGURGER MENU
-*******************************/
-
- .ham-button {
-  display: none;
-
- } 
- 
- .ham {
-    display: none;
-    
-  }
-}
 
 
 
@@ -943,6 +571,568 @@ header {
 .ham1.active .bottom {
   stroke-dashoffset: -138px;
 }
+@media (min-width: 1200px) {
+  .separator {
+    color: black;
+    align-items: center;
+    width: 64%;
+    border-bottom: 1px solid black;
+    margin: 0 auto; /* Centra el elemento horizontalmente */
+    margin-top: 5vh;
+  }
+
+/*******************************
+*  HEADER
+*******************************/
+  .nav-bar{
+    height: 6vh;
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 30vh;
+    color: black;
+    font-weight: 200;
+    font-style: normal;
+    position: unset;
+  }
+
+  .nav-menu{
+    position:unset;
+    display: flex;
+    justify-content: space-between;
+    width: 70%;
+    background-color: #fff;
+    backdrop-filter: unset;
+    z-index: 0;
+  }
+
+  .nav-menu.active{
+    left: 0;
+    height: auto;
+  }
+
+  .nav-item{
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    font-weight: 400;
+    color: black;
+  }
+
+  .nav-item:hover{
+    color:#8b8b8b;
+    background-color: #fff;
+    cursor: pointer;
+  }
+
+  .nav-item.selected {
+    background-color: green;
+  }
+
+/*******************************
+*  HOME
+*******************************/
+  .home, .skills, .projects, .education, .contact-me {
+    height: auto;
+    padding: 6vh 30vh;
+    justify-content: unset;
+  }
+
+  .home {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+
+  .home h1 {
+    display: none;
+  }
+
+  .profile-image-container {
+    width: auto;
+    order: 2;
+    margin:0;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: unset;
+    align-items: center;
+  }
+
+  .profile-image {
+    height: 45vh; /* Reduce la altura */
+    width: auto;  /* Mantén el ancho proporcional */
+    padding: 0;
+    border-left: none;
+    object-fit: cover;
+    animation: myAnimRight 2s ease 0s 1 normal forwards;
+    margin: 0;
+  }
+
+  .icons-container {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    animation: myAnimRight 2s ease 0s 1 normal forwards;
+  }
+
+  .profile-title {
+    width: 100%;
+  }
+
+  .profile-title h1 {
+    display: block;
+    font-size: 3.5rem;
+    text-align: left;
+    padding: 0;
+    margin: 0;
+  }
+
+  .profile-title p {
+    width: 100%;
+    text-align: left;
+    overflow-wrap: unset;
+    word-break: unset;
+    border-left: 1px solid black;
+    animation: fadeInDown 2s ease 0s 1 normal forwards;
+    font-size: 1rem;
+    margin: 0;
+  }
+
+  .title {
+    font-size: clamp(2.5rem, 3vw, 3.5rem);
+    font-weight: var(--font-medium);
+    padding: 0;
+    margin-top: 6vh;
+    margin-bottom: 0;
+  }
+/*******************************
+*  SKILLS
+*******************************/
+  .card-container {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 10vh;
+    gap: 1rem; /* Añadir un espacio entre las tarjetas */
+    width: 100%;
+    justify-content: space-around;
+
+  }
+  
+  .card {
+    text-align: center; /* Centrar el contenido de las tarjetas */
+    padding: 1rem; /* Añadir padding interno */
+    background-color: #ffffff; /* Fondo blanco para las tarjetas */
+    justify-content: space-around;
+    width: auto;
+
+  }
+  
+  .card-img-container {
+    width: 30%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .card-img-container img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .js {
+    width: 17%;
+  }
+
+  .card h3 {
+    margin-top: 1vh;
+    font-size: 1.2rem;
+  }
+  
+  .card p {
+    font-size: 1rem;
+  }
+
+  .skills {
+    margin-bottom: 10vh;;
+  }
+
+  .update {
+    opacity: 0;
+  }
+
+/*******************************
+*  PROJECTS
+*******************************/
+
+  .projects {
+    height:100vh;
+  }
+  .slider-wrapper {
+    position: relative;
+    opacity: 0;
+    margin-top: 10vh;
+    margin-bottom: 10vh;
+    width: 100vh;
+    max-width: unset;
+    height: 100%;
+
+  }
+
+  .slider-wrapper.visible {
+    opacity: 1;
+    animation: myAnimLeft 2s ease 0s 1 normal forwards;
+  }
+
+  .slider {
+    display: flex;
+    flex-wrap: nowrap; /* Evita que las cartas pasen a otra línea */
+    justify-content: center; /* Centra las cartas */
+    overflow-x: auto; /* Permite desplazamiento si es necesario */
+    scroll-snap-type: x mandatory; /* Mantiene el scroll estructurado */
+    padding: 1rem 0;
+    width: 100%;
+    height: 80vh;
+  }
+
+  .slider::-webkit-scrollbar {
+    display: block;
+  }
+
+  .slider-nav {
+    display: none;
+  }
+
+  .project-card-container { 
+    display: flex;
+    flex-wrap: wrap; /* Permite que las cartas pasen a otra línea si no caben */
+    padding: 0 8px;
+    scroll-snap-align:unset;
+    flex: unset;
+    height: 70%;
+  }
+
+  .project-card {
+    display: flex; 
+    background-color: #f5f5f5;
+    flex-direction: column; 
+    align-items: center;
+    padding: 10px;
+    border-radius: 16px;
+    width: 250px;
+    overflow: hidden; 
+    box-shadow: var(--shadow-elevation-medium);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .project-card:hover {
+    background-color: #ffffff;
+    cursor: pointer;
+    transform: scale(1.05); /* Aumenta el tamaño un 10% */
+    box-shadow: var(--shadow-elevation-high); /* Sombra más intensa para destacar */
+  }
+
+  .project-card-img-container {
+    width: 100%;
+    height: auto;
+    margin-bottom: 1vh;
+  }
+
+  .project-card-img-container img {
+    width: 100%;
+    height: 100%;
+    border-radius: 16px 16px 16px 16px;
+    object-fit: contain;
+  }
+
+  .project-card-text {
+    display:flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .project-card-text p {
+    text-align: left;
+    font-size: 0.7rem;/* Rango más pequeño para pantallas chicas */
+    font-weight: 300;
+    align-self: baseline;
+    color: var(--text-color);
+  }
+
+  .project-card h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    align-self: baseline;
+  }
+
+  /*******************************
+ *  EDUCATION
+ *******************************/
+
+ .education {
+  height: auto;
+}
+
+.education .title {
+  margin-bottom: 0;
+}
+
+.education-container {
+  display: flex; 
+  flex-direction: row;
+  justify-content: space-between;
+  align-self: flex-start;
+  width: 100%;
+  margin-top: 5vh;
+}
+
+.certification-container {
+  display: flex;
+  flex-direction: column; 
+  align-self: baseline;
+  align-items: baseline;
+  opacity: 0;
+  margin-top: 5vh;
+  padding: 0;
+}
+
+.certification-container.visible {
+  opacity: 1;
+  animation: myAnimLeft 2s ease 0s 1 normal forwards;
+}
+
+.certification {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 3rem;
+  max-width: 100%;
+}
+
+.certification-container h2 {
+  font-size: 1.9rem;
+  font-weight: 500;
+  margin-bottom: 3vh;    
+}
+
+.certification h3 {
+  font-size: 1.2rem;
+  font-weight: 400;
+  align-self: baseline;
+}
+
+.certification p {
+  font-size: 1rem;
+  font-weight: 200;
+  color: var(--text-color);
+  font-weight: var(--font-medium);
+  align-self: baseline;
+}
+
+.certification a {
+  font-size: .8rem;
+  transition: color 0.3s ease;
+  align-self: baseline;
+  text-decoration: none;
+}
+
+.certification a:hover {
+  color: var(--text-color-hover);
+}
+
+.degree {
+  margin-top: 1rem;
+}
+/*******************************
+*  CONTACT ME
+*******************************/
+
+.contact-me {
+height: 100vh;
+}
+
+
+/*******************************
+*  HAMGURGER MENU
+*******************************/
+
+.ham-button {
+display: none;
+
+} 
+
+.ham {
+  display: none;
+  
+}
+
+}
+
+@media (min-width: 1536px) {
+  .profile-title h1 {
+    font-size: 4rem;
+  }
+  .profile-title p {
+    font-size: 1.3rem
+  }
+
+  .education-container {
+    margin-top: 6vh;
+  }
+
+  .project-card-text {
+    display:flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  .slider-wrapper {
+    width: 100%;
+  }
+
+  .slider {
+    display: flex;
+    flex-wrap: nowrap; /* Evita que las cartas pasen a otra línea */
+    justify-content: space-between; /* Centra las cartas */
+    overflow-x: auto; /* Permite desplazamiento si es necesario */
+    scroll-snap-type: x mandatory; /* Mantiene el scroll estructurado */
+    padding: 1rem 0;
+    width: 100%;
+  }
+
+  .project-card-container { 
+    display: flex;
+    flex-wrap: wrap; /* Permite que las cartas pasen a otra línea si no caben */
+    height: auto;
+    width: 100%;
+    height: 75%;
+  }
+
+  .project-card {
+    display: flex; 
+    flex-direction: column; 
+    align-items: center;
+    width: 95%;
+    height: 100%;
+  }
+
+  .project-card-img-container {
+    width: 30vh;
+    height: 35vh;
+    margin-bottom: 1vh;
+  }
+
+  .project-card-img-container img {
+    width: 100%;
+    height: 100%;
+    border-radius: 16px 16px 16px 16px;
+    object-fit: contain;
+  }
+
+  .project-card-text {
+    display:flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .project-card-text p {
+    text-align: left;
+    font-size: 0.9rem;/* Rango más pequeño para pantallas chicas */
+    font-weight: 300;
+    align-self: baseline;
+    color: var(--text-color);
+  }
+
+  .project-card h3 {
+    font-size: clamp(0.8rem, 3vw, 1.5rem);
+    font-weight: 600;
+    align-self: baseline;
+  }
+}
+
+@media (min-width: 1920px) {
+  .profile-title h1 {
+    font-size: 5.5rem;
+  }
+  
+  .certification-container h2 {
+    font-size: 2rem;
+    font-weight: 500;
+    margin-bottom: 3vh;    
+  }
+  
+  .certification h3 {
+    font-size: 1.3rem;
+    font-weight: 400;
+    align-self: baseline;
+  }
+  
+  .certification p {
+    font-size: 1rem;
+    font-weight: 200;
+    color: var(--text-color);
+    font-weight: var(--font-medium);
+    align-self: baseline;
+  }
+  
+  .certification a {
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+    align-self: baseline;
+    text-decoration: none;
+  }
+
+
+  .project-card-container { 
+    height: 75%;
+  }
+  
+  .project-card-text {
+    display:flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .project-card-text p {
+    text-align: left;
+    font-size: 1.3rem;/* Rango más pequeño para pantallas chicas */
+    font-weight: 300;
+    align-self: baseline;
+    color: var(--text-color);
+  }
+
+  .project-card h3 {
+    font-size: 1.6rem;
+    font-weight: 600;
+    align-self: baseline;
+  }
+
+  .project-card-img-container {
+    width: 80%;
+    height: unset;
+    margin-bottom: 1vh;
+  }
+
+  .project-card-img-container img {
+    width: 100%;
+    height: auto;
+    border-radius: 16px 16px 16px 16px;
+    object-fit: contain;
+  }
+  
+
+
+/*******************************
+*  SKILLS
+*******************************/
+
+  
+
+
+
+
+
+}
+
 
 
 
