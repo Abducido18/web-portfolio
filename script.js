@@ -10,13 +10,11 @@ document.addEventListener('DOMContentLoaded', () => {
   }, { threshold: 0.3 });
   animatedElements.forEach(element => observer.observe(element));
 
-
-
   const sliderNavLinks = document.querySelectorAll('.slider-nav a');
   const slider = document.querySelector('.slider');
   const cards = document.querySelectorAll('.project-card-container'); // Asegúrate de que el selector sea correcto
 
-  sliderNavLinks.forEach((link) => {
+  sliderNavLinks.forEach((link, index) => {
     link.addEventListener('click', function(event) {
       event.preventDefault();
       const slideId = this.getAttribute('href');
@@ -83,8 +81,7 @@ document.addEventListener('DOMContentLoaded', () => {
     anchor.addEventListener('click', function(event) {
         event.preventDefault();
         const target = document.querySelector(this.getAttribute('href'));
-        target.scrollIntoView({ behavior: 'smooth'});
-
+        target.scrollIntoView({ behavior: 'smooth' });
     });
   });
   
@@ -99,7 +96,7 @@ const sections = document.querySelectorAll('section');
 let currentSection = 'home';
 window.addEventListener('scroll', () => {
   sections.forEach(section => {
-    if (window.scrollY >= (section.offsetTop - 600)) {
+    if (window.scrollY >= (section.offsetTop - 300)) {
       currentSection = section.id;
     }
   });
@@ -111,7 +108,3 @@ window.addEventListener('scroll', () => {
     }
   });
 });
-
-
-
-
