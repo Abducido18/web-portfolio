@@ -10,6 +10,8 @@ document.addEventListener('DOMContentLoaded', () => {
   }, { threshold: 0.3 });
   animatedElements.forEach(element => observer.observe(element));
 
+
+
   const sliderNavLinks = document.querySelectorAll('.slider-nav a');
   const slider = document.querySelector('.slider');
   const cards = document.querySelectorAll('.project-card-container'); // Asegúrate de que el selector sea correcto
@@ -76,52 +78,42 @@ document.addEventListener('DOMContentLoaded', () => {
       hamSvg.classList.remove('active'); // Ajusta el ícono
     }
   });
-
+  
   document.querySelectorAll('.nav-item').forEach(anchor => {
     anchor.addEventListener('click', function(event) {
-      event.preventDefault();
-      const target = document.querySelector(this.getAttribute('href'));
-      target.scrollIntoView({ behavior: 'smooth' });
+        event.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        target.scrollIntoView({ behavior: 'smooth'});
 
-      setTimeout(() => {
-        window.dispatchEvent(new Event('resize')); // Forzar recalculación en iPad
-      }, 300);
     });
   });
+  
+  const contactForm = document.querySelector('.contact-form');
 
-  // Forzar recalculación después de cargar la página
-  setTimeout(() => {
-    window.dispatchEvent(new Event('resize'));
-  }, 500);
-
-  nav(); // Llamamos a la función nav() después de todo
 });
 
 function nav() {
   const menuItems = document.querySelectorAll('.nav-menu a');
   const sections = document.querySelectorAll('section');
-
   const sectionObserver = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
+        // Remover la clase 'selected' de todos los elementos del menú
         menuItems.forEach(item => item.classList.remove('selected'));
   
+        // Agregar la clase 'selected' al elemento del menú correspondiente
         const id = entry.target.getAttribute('id');
         const navItem = document.querySelector(`.nav-menu a[href="#${id}"]`);
+        console.log(id);
         if (navItem) {
           navItem.classList.add('selected');
         }
       }
     });
-  }, {
-    rootMargin: "0px 0px -50% 0px", // Mejora detección en iPad
-    threshold: [0.3, 0.6, 0.9] // Sensibilidad al cambio de sección
-  });
-
+  }, { threshold: 0.3 });
   sections.forEach(section => sectionObserver.observe(section));
-
-  // Forzar recalculación en scroll (para evitar el bug de iPad)
-  window.addEventListener('scroll', () => {
-    window.dispatchEvent(new Event('resize'));
-  }, { passive: true });
 }
+
+nav();
+
+
