@@ -10,24 +10,24 @@ document.addEventListener('DOMContentLoaded', () => {
   }, { threshold: 0.3 });
   animatedElements.forEach(element => observer.observe(element));
 
-  const sections = document.querySelectorAll('section');
-  const sectionObserver = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        // Remover la clase 'selected' de todos los elementos del menú
-        menuItems.forEach(item => item.classList.remove('selected'));
+  const sections = document.querySelectorAll('section[id]')
 
-        // Agregar la clase 'selected' al elemento del menú correspondiente
-        const id = entry.target.getAttribute('id');
-        const navItem = document.querySelector(`.nav-menu a[href="#${id}"]`);
-        console.log(id);
-        if (navItem) {
-          navItem.classList.add('selected');
-        }
-      }
-    });
-  }, { threshold: 0.3 });
-  sections.forEach(section => sectionObserver.observe(section));
+  function scrollActive(){
+      const scrollY = window.pageYOffset
+  
+      sections.forEach(current =>{
+          const sectionHeight = current.offsetHeight,
+              sectionTop = current.offsetTop - 50;
+              let sectionId = current.getAttribute('id')
+  
+          if(scrollY > sectionTop && scrollY <= sectionTop + sectionHeight){
+              document.querySelector('.nav-menu a[href*=' + sectionId + ']').classList.add('selected')
+          }else{
+              document.querySelector('.nav-menu a[href*=' + sectionId + ']').classList.remove('selected')
+          }
+      })
+  }
+  window.addEventListener('scroll', scrollActive)
 
   const sliderNavLinks = document.querySelectorAll('.slider-nav a');
   const slider = document.querySelector('.slider');
