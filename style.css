@@ -200,7 +200,6 @@ header {
   display: none;
 }
 
-
 .home, .skills, .projects, .education, .contact-me {
   width: 100%;
   padding: 0 30px;
@@ -246,6 +245,7 @@ header {
 
 .fab.fa-github:hover, .fab.fa-whatsapp:hover, .fas.fa-envelope:hover, .fab.fa-linkedin:hover {
   color:#8b8b8b;
+  cursor: pointer;
 }
 
 .profile-title {
@@ -851,6 +851,10 @@ header {
     font-size: .9rem;
   }
 
+  .nav-item {
+    padding: 0;
+  }
+
 /*******************************
 *  HOME
 *******************************/
@@ -952,9 +956,9 @@ header {
   }
 
   .nav-item:hover{
-    color:#8b8b8b;
+    color: unset;
     background-color: #fff;
-    cursor: pointer;
+    cursor: unset
   }
 
   .nav-item.selected {
@@ -1149,6 +1153,7 @@ header {
 
 }
 
+
 @media (min-width: 1280px) {
   .separator {
     color: black;
@@ -1191,10 +1196,9 @@ header {
   }
 
   .nav-item:hover{
-    color:#8b8b8b;
+
     cursor: pointer;
     background-color: #fff;
-
   }
 
   .nav-item.selected {
@@ -1303,6 +1307,7 @@ header {
   }
   .skills h3 {
     font-size: 1.3rem;
+    margin-top: 1vh;
   }
   
   .card p {
@@ -1455,8 +1460,6 @@ header {
   .project-card-text p {
     font-size: 1rem;
   }
-
-
 
   .certification-container h2 {
     font-size: 2rem; 
