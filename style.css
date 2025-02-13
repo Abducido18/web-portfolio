@@ -107,7 +107,6 @@ nav a {
   height: 4vh;
 }
 
-
 button {
   all: unset;
 }
@@ -229,6 +228,7 @@ header {
   font-size: 1.6rem;
   margin-bottom: 0.7vh;
   transition: color 0.3s ease;
+  color: black;
 }
 
 .fas.fa-envelope {
@@ -463,6 +463,12 @@ header {
   height: 13vh;
 }
 
+.project-card-text a {
+  all: unset;
+  text-align: left;
+  width: 30%;
+}
+
 .project-card-text p {
   text-align: left;
   font-size: clamp(0.7rem, 3vw, 1.5rem); /* Rango más pequeño para pantallas chicas */
@@ -475,6 +481,17 @@ header {
   font-size: clamp(0.8rem, 3vw, 1.5rem);
   font-weight: 600;
   align-self: baseline;
+  text-decoration: underline;
+}
+
+.tech-img-container {
+  display: flex;
+  padding: 1vh 0;
+
+}
+.tech-img-container img {
+  width: 3.5vh;
+  margin-right: 1vh;
 }
 
 /*******************************
@@ -1287,10 +1304,14 @@ header {
   margin-top: 1.3vh;
 }
 
-.fab.fa-github, .fab.fa-whatsapp, .fas.fa-envelope, .fab.fa-linkedin {
-  font-size: 2rem;
-  margin-right: 0.7vh;
+:is(.fab.fa-github, .fab.fa-whatsapp, .fas.fa-envelope, .fab.fa-linkedin):hover {
+  color: #646464;
+  transform: scale(1.1);
+  transition: 0.3s ease-in-out;
+  cursor: pointer;
 }
+
+
 /*******************************
 *  SKILLS
 *******************************/
@@ -1375,6 +1396,13 @@ header {
     height: auto;
   }
 
+  .project-card-text a:hover {
+    transition: color .3s ease;
+  }
+
+  .project-card-text a:hover {
+    color:#575757;
+  }
 
 /*******************************
 *  EDUCATION
@@ -1490,7 +1518,9 @@ header {
   }
 
   .nav-branding {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
+    width: 3.8vh;
+    height: 3.8vh;
   }
 
   .nav-item {
