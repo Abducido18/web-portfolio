@@ -494,7 +494,7 @@ header {
 }
 
 .p-js {
-  width: 2.2;
+  width: 3.2;
 }
 
 /*******************************
@@ -684,9 +684,9 @@ header {
   stroke-dashoffset: -138px;
 }
 
-@media only screen and (max-height: 575.98px) and (orientation: landscape) {
+@media only screen and (max-height: 600px) and (orientation: landscape) {
     h1 {
-      font-size: 50vh;
+      font-size: 100vh;
     }
   }
 
