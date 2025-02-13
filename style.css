@@ -926,7 +926,7 @@ header {
   }
 }
 
-@media (min-width: 1023px) and (max-height: 769px) {
+@media (min-width: 1023px) and (max-height: 769px)  {
  
   .nav-branding {
     height: 5vh;
@@ -1153,7 +1153,6 @@ header {
 
 }
 
-
 @media (min-width: 1280px) {
   .separator {
     color: black;
@@ -1165,8 +1164,8 @@ header {
   }
 
   .nav-branding {
-    height: 4.6vh;
-    width: 4.6vh;
+    height: 4vh;
+    width: 4vh;
     font-size: 1rem;
   }
   .nav-bar{
@@ -1196,9 +1195,9 @@ header {
   }
 
   .nav-item:hover{
-
     cursor: pointer;
     background-color: #fff;
+    color: green;
   }
 
   .nav-item.selected {
@@ -1209,6 +1208,29 @@ header {
 
   .ham-button {
     display: none;
+  }
+
+  @media (pointer: fine) {
+    .nav-item:hover {
+      cursor: pointer;
+      background-color: #fff;
+      color: green;
+    }
+
+    .nav-item.selected {
+      text-decoration: underline;
+      text-decoration-color: green;
+      text-decoration-thickness: 3px;
+    }
+  }
+
+  /* Desactiva hover en pantallas táctiles (tablets) */
+  @media (pointer: coarse) {
+    .nav-item:hover {
+      cursor: default;
+      background-color: unset;
+      color: unset;
+    }
   }
 
 /*******************************
