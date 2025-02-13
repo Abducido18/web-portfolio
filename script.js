@@ -93,25 +93,24 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-  const menuItems = document.querySelectorAll('.nav-item');
-  const sections = document.querySelectorAll('section');
-  
-  let currentSection = 'home';
-  window.addEventListener('scroll', () => {
-    sections.forEach(section => {
-      if (window.scrollY >= (section.offsetTop - 500)) {
-        currentSection = section.id;
-        console.log(currentSection)
-      }
-    })
+const menuItems = document.querySelectorAll('.nav-item');
+const sections = document.querySelectorAll('section');
 
-    menuItems.forEach(menuItem => {
-      
-      if (menuItem.href.includes(currentSection)) {
-        menuItem.classList.add('selected');
-      }
-    });
-  })
+let currentSection = 'home';
+window.addEventListener('scroll', () => {
+  sections.forEach(section => {
+    if (window.scrollY >= (section.offsetTop - 600)) {
+      currentSection = section.id;
+    }
+  });
+
+  menuItems.forEach(menuItem => {
+    menuItem.classList.remove('active');
+    if (menuItem.href.includes(currentSection)) {
+      menuItem.classList.add('active');
+    }
+  });
+});
 
 
 

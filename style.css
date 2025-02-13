@@ -940,10 +940,8 @@ header {
     text-decoration-thickness: 2px;
   }
 
-  .nav-item.selected {
-    text-decoration: underline;
-    text-decoration-color: green;
-    text-decoration-thickness: 3px; 
+  .nav-item.active {
+    color: green;
   }
 
   .ham-button {
@@ -1203,10 +1201,8 @@ header {
     color: green;
   }
 
-  .nav-item.selected {
-    text-decoration: underline;
-    text-decoration-color: green ;
-    text-decoration-thickness: 3px; /* Grosor del subrayado al pasar el cursor */
+  .nav-item.active {
+    color:green;
   }
 
   .ham-button {
