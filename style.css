@@ -840,7 +840,6 @@ header {
 
 /* ======================== MOBILE LANDSCAPE (CELULARES EN HORIZONTAL) ======================== */
 @media (max-width: 920px) and (orientation: landscape) {
-  
 }
 
 @media (min-width: 1023px) {
@@ -1237,29 +1236,6 @@ header {
 
   .ham-button {
     display: none;
-  }
-
-  @media (pointer: fine) {
-    .nav-item:hover {
-      cursor: pointer;
-      background-color: #fff;
-      color: green;
-    }
-
-    .nav-item.selected {
-      text-decoration: underline;
-      text-decoration-color: green;
-      text-decoration-thickness: 3px;
-    }
-  }
-
-  /* Desactiva hover en pantallas táctiles (tablets) */
-  @media (pointer: coarse) {
-    .nav-item:hover {
-      cursor: default;
-      background-color: unset;
-      color: unset;
-    }
   }
 
 /*******************************
