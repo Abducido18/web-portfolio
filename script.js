@@ -11,30 +11,23 @@ document.addEventListener('DOMContentLoaded', () => {
   animatedElements.forEach(element => observer.observe(element));
 
   const sections = document.querySelectorAll('section');
-  const menuItems = document.querySelectorAll('.nav-menu a');
+  const sectionObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        // Remover la clase 'selected' de todos los elementos del menú
+        menuItems.forEach(item => item.classList.remove('selected'));
 
-  // 🚀🔥 Solución 3: Detectar la sección actual en el scroll
-  window.addEventListener('scroll', () => {
-    let currentSection = '';
-
-    sections.forEach(section => {
-      const sectionTop = section.offsetTop;
-      const sectionHeight = section.clientHeight;
-
-      if (window.scrollY >= sectionTop - sectionHeight / 3) {
-        currentSection = section.getAttribute('id');
+        // Agregar la clase 'selected' al elemento del menú correspondiente
+        const id = entry.target.getAttribute('id');
+        const navItem = document.querySelector(`.nav-menu a[href="#${id}"]`);
+        console.log(id);
+        if (navItem) {
+          navItem.classList.add('selected');
+        }
       }
     });
-
-    menuItems.forEach(item => item.classList.remove('selected'));
-    
-    if (currentSection) {
-      const activeItem = document.querySelector(`.nav-menu a[href="#${currentSection}"]`);
-      if (activeItem) {
-        activeItem.classList.add('selected');
-      }
-    }
-  });
+  }, { threshold: 0.3 });
+  sections.forEach(section => sectionObserver.observe(section));
 
   const sliderNavLinks = document.querySelectorAll('.slider-nav a');
   const slider = document.querySelector('.slider');
@@ -73,7 +66,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const navMenu = document.querySelector('.nav-menu');
   const hamSvg = document.querySelector('.ham');
   const hamButton = document.querySelector('.ham-button');
-
+  const menuItems = document.querySelectorAll('.nav-menu a');
 
   hamButton.addEventListener('click', () => {
     navMenu.classList.toggle('active');

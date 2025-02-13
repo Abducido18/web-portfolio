@@ -211,6 +211,7 @@ header {
   background-color: white;
   will-change: transform, opacity;
   box-sizing: border-box;
+  height: 100vh;
 }
 
 .home {
