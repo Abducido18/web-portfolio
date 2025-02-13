@@ -684,6 +684,12 @@ header {
   stroke-dashoffset: -138px;
 }
 
+@media only screen and (max-height: 575.98px) and (orientation: landscape) {
+    h1 {
+      font-size: 50vh;
+    }
+  }
+
 @media (min-width: 768px) {
  
   .nav-bar {
