@@ -10,24 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }, { threshold: 0.3 });
   animatedElements.forEach(element => observer.observe(element));
 
-  const sections = document.querySelectorAll('section');
-  const sectionObserver = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        // Remover la clase 'selected' de todos los elementos del menú
-        menuItems.forEach(item => item.classList.remove('selected'));
 
-        // Agregar la clase 'selected' al elemento del menú correspondiente
-        const id = entry.target.getAttribute('id');
-        const navItem = document.querySelector(`.nav-menu a[href="#${id}"]`);
-        console.log(id);
-        if (navItem) {
-          navItem.classList.add('selected');
-        }
-      }
-    });
-  }, { threshold: 0.3 });
-  sections.forEach(section => sectionObserver.observe(section));
 
   const sliderNavLinks = document.querySelectorAll('.slider-nav a');
   const slider = document.querySelector('.slider');
@@ -100,7 +83,7 @@ document.addEventListener('DOMContentLoaded', () => {
     anchor.addEventListener('click', function(event) {
         event.preventDefault();
         const target = document.querySelector(this.getAttribute('href'));
-        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        target.scrollIntoView({ behavior: 'smooth'});
 
     });
   });
@@ -108,5 +91,29 @@ document.addEventListener('DOMContentLoaded', () => {
   const contactForm = document.querySelector('.contact-form');
 
 });
+
+function nav() {
+  const menuItems = document.querySelectorAll('.nav-menu a');
+  const sections = document.querySelectorAll('section');
+  const sectionObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        // Remover la clase 'selected' de todos los elementos del menú
+        menuItems.forEach(item => item.classList.remove('selected'));
+  
+        // Agregar la clase 'selected' al elemento del menú correspondiente
+        const id = entry.target.getAttribute('id');
+        const navItem = document.querySelector(`.nav-menu a[href="#${id}"]`);
+        console.log(id);
+        if (navItem) {
+          navItem.classList.add('selected');
+        }
+      }
+    });
+  }, { threshold: 0.3 });
+  sections.forEach(section => sectionObserver.observe(section));
+}
+
+nav();
 
 
