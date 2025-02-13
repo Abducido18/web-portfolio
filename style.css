@@ -219,7 +219,7 @@ header {
 }
 
 .home h1 {
-  margin-top: 18vh;
+  margin-top: 15vh;
   font-size: clamp(1.9rem, 5vw, 5.5rem);
   font-weight: var(--font-medium);
   width: 100%;
@@ -237,10 +237,15 @@ header {
 .fab.fa-github, .fab.fa-whatsapp, .fas.fa-envelope, .fab.fa-linkedin {
   font-size: 1.6rem;
   margin-bottom: 0.7vh;
+  transition: color 0.3s ease;
 }
 
 .fas.fa-envelope {
   font-size: 1.5rem;
+}
+
+.fab.fa-github:hover, .fab.fa-whatsapp:hover, .fas.fa-envelope:hover, .fab.fa-linkedin:hover {
+  color:#8b8b8b;
 }
 
 .profile-title {
@@ -707,7 +712,20 @@ header {
     margin-top: 3vh;
     margin-bottom: 1vh;
     margin-right: 0;
+  }
 
+  .icons-container {
+    margin-right: 0.5vh;
+    align-items: center; /* Cambia a center para centrar los iconos horizontalmente */
+  }
+  
+  .fab.fa-github, .fab.fa-whatsapp, .fas.fa-envelope, .fab.fa-linkedin {
+    font-size: 1.8rem;
+    margin-bottom: 0.7vh;
+  }
+  
+  .fas.fa-envelope {
+    font-size: 1.6rem;
   }
 
   .home h1 {
@@ -922,12 +940,15 @@ header {
     background-color: #fff;
     backdrop-filter: unset;
     z-index: 0;
-
   }
 
   .nav-item{
     color: black;
     font-weight: 400;
+    transition: color 0.3s ease, text-decoration-color 0.3s ease, text-decoration-thickness 0.3s ease;
+    text-decoration: underline;
+    text-decoration-color: transparent; /* Inicialmente transparente */
+    text-decoration-thickness: 2px;
   }
 
   .nav-item:hover{
@@ -937,7 +958,9 @@ header {
   }
 
   .nav-item.selected {
-    background-color: green;
+    text-decoration: underline;
+    text-decoration-color: green;
+    text-decoration-thickness: 3px; 
   }
 
   .ham-button {
@@ -952,6 +975,7 @@ header {
 
 .home {
   flex-direction: row;
+  padding: 6vh 15vh;
 }
 
 .home h1 {
@@ -987,7 +1011,7 @@ header {
 }
 
 .profile-title {
-  margin-top: 25vh;
+  margin-top: 15vh;
 }
 
 .profile-title h1 {
@@ -1011,6 +1035,15 @@ header {
 .title {
   margin-top: 6vh;
   margin-bottom: 15vh;
+}
+
+.icons-container {
+  margin-top: 1vh;
+}
+
+.fab.fa-github, .fab.fa-whatsapp, .fas.fa-envelope, .fab.fa-linkedin {
+  font-size: 1.8rem;
+  margin-right: 0.7vh;
 }
 /*******************************
 *  SKILLS
@@ -1127,8 +1160,8 @@ header {
   }
 
   .nav-branding {
-    height: 3.8vh;
-    width: 3.8vh;
+    height: 4.6vh;
+    width: 4.6vh;
     font-size: 1rem;
   }
   .nav-bar{
@@ -1151,17 +1184,23 @@ header {
     font-weight: 400;
     font-size: 1.1rem;
     padding: 0;
+    transition: color 0.3s ease, text-decoration-color 0.3s ease, text-decoration-thickness 0.3s ease;
+    text-decoration: underline;
+    text-decoration-color: transparent; /* Inicialmente transparente */
+    text-decoration-thickness: 2px; 
   }
 
   .nav-item:hover{
     color:#8b8b8b;
-    background-color: #fff;
     cursor: pointer;
+    background-color: #fff;
+
   }
 
   .nav-item.selected {
     text-decoration: underline;
     text-decoration-color: green ;
+    text-decoration-thickness: 3px; /* Grosor del subrayado al pasar el cursor */
   }
 
   .ham-button {
@@ -1209,10 +1248,11 @@ header {
   align-items: center;
   justify-content: center;
   animation: myAnimRight 2s ease 0s 1 normal forwards;
+  align-items: center;
 }
 
 .profile-title {
-  margin-top: 20vh;
+  margin-top: 22vh;
 }
 
 .profile-title h1 {
@@ -1237,6 +1277,15 @@ header {
 .title {
   margin-top: 6vh;
   margin-bottom: 15vh;
+}
+
+.icons-container {
+  margin-top: 1.3vh;
+}
+
+.fab.fa-github, .fab.fa-whatsapp, .fas.fa-envelope, .fab.fa-linkedin {
+  font-size: 2rem;
+  margin-right: 0.7vh;
 }
 /*******************************
 *  SKILLS
@@ -1437,16 +1486,30 @@ header {
     padding: 0 20vh;
   }
 
+  .nav-branding {
+    font-size: 1.5rem;
+  }
+
+  .nav-item {
+    font-size: 1.3rem;
+  }
+
   .home {
-
     padding: 0 20vh;
-
   }
   
   .profile-title h1 {
     font-size: 6rem;
   }
 
+  .icons-container {
+    margin-top: 1.3vh;
+  }
+  
+  .fab.fa-github, .fab.fa-whatsapp, .fas.fa-envelope, .fab.fa-linkedin {
+    font-size: 2.5rem;
+    margin-right: 0.7vh;
+  }
 
   .profile-title p {
     font-size: 1.8rem;
