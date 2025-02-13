@@ -107,10 +107,6 @@ nav a {
   height: 4vh;
 }
 
-.nav-branding:hover {
-  cursor: pointer;
-  color: white;
-}
 
 button {
   all: unset;
@@ -187,10 +183,6 @@ header {
   transition: background-color 0.3s ease;
 }
 
-.nav-item:hover{
-  background-color: rgba(66, 66, 66, 0.9);
-  cursor: pointer;
-}
 
 
 /*******************************
@@ -243,10 +235,6 @@ header {
   font-size: 1.5rem;
 }
 
-.fab.fa-github:hover, .fab.fa-whatsapp:hover, .fas.fa-envelope:hover, .fab.fa-linkedin:hover {
-  color:#8b8b8b;
-  cursor: pointer;
-}
 
 .profile-title {
   margin-top: 3vh;
@@ -434,7 +422,7 @@ header {
   transition: opacity ease 250ms;
 }
 
-.slider-nav a:hover, .slider-nav a.active {
+.slider-nav a.active {
   opacity: 1;
   background-color: #fff;
 }
@@ -551,9 +539,6 @@ header {
   text-decoration: none;
 }
 
-.certification a:hover {
-  color: var(--text-color-hover);
-}
 
 .degree {
   margin-top: 1rem;
@@ -630,10 +615,6 @@ header {
   transition: background-color 0.3s ease;
 }
 
-.contact-me button:hover {
-  background-color: #464646;
-  cursor: pointer;
-}
 
 /*******************************
  *  HAMGURGER MENU
@@ -953,15 +934,10 @@ header {
   .nav-item{
     color: black;
     font-weight: 400;
+    transition: color 0.3s ease, text-decoration-color 0.3s ease, text-decoration-thickness 0.3s ease;
     text-decoration: underline;
     text-decoration-color: transparent; /* Inicialmente transparente */
     text-decoration-thickness: 2px;
-  }
-
-  .nav-item:hover{
-    color: unset;
-    background-color: #fff;
-    cursor: unset
   }
 
   .nav-item.selected {
@@ -1215,6 +1191,7 @@ header {
     font-weight: 400;
     font-size: 1.1rem;
     padding: 0;
+    transition: color 0.3s ease, text-decoration-color 0.3s ease, text-decoration-thickness 0.3s ease;
     text-decoration: underline;
     text-decoration-color: transparent; /* Inicialmente transparente */
     text-decoration-thickness: 2px; 
@@ -1235,6 +1212,8 @@ header {
   .ham-button {
     display: none;
   }
+
+
 
 /*******************************
 *  HOME
