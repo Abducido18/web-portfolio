@@ -92,28 +92,27 @@ document.addEventListener('DOMContentLoaded', () => {
 
 });
 
-function nav() {
-  const menuItems = document.querySelectorAll('.nav-menu a');
+
+  const menuItems = document.querySelectorAll('.nav-item');
   const sections = document.querySelectorAll('section');
-  const sectionObserver = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        // Remover la clase 'selected' de todos los elementos del menú
-        menuItems.forEach(item => item.classList.remove('selected'));
   
-        // Agregar la clase 'selected' al elemento del menú correspondiente
-        const id = entry.target.getAttribute('id');
-        const navItem = document.querySelector(`.nav-menu a[href="#${id}"]`);
-        console.log(id);
-        if (navItem) {
-          navItem.classList.add('selected');
-        }
+  let currentSection = 'home';
+  window.addEventListener('scroll', () => {
+    sections.forEach(section => {
+      if (window.scrollY >= (section.offsetTop - 500)) {
+        currentSection = section.id;
+        console.log(currentSection)
+      }
+    })
+
+    menuItems.forEach(menuItem => {
+      
+      if (menuItem.href.includes(currentSection)) {
+        menuItem.classList.add('selected');
       }
     });
-  }, { threshold: 0.3 });
-  sections.forEach(section => sectionObserver.observe(section));
-}
+  })
 
-nav();
+
 
 
