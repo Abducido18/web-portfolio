@@ -448,7 +448,6 @@ header {
 .project-card-img-container {
   width: 100%;
   margin-bottom: 1vh;
-
 }
 
 .project-card-img-container img {
@@ -492,6 +491,10 @@ header {
 .tech-img-container img {
   width: 3.5vh;
   margin-right: 1vh;
+}
+
+.p-js {
+  width: 3.2;
 }
 
 /*******************************
@@ -673,7 +676,6 @@ header {
   stroke-dasharray: 40 180;
 }
 
-
 .ham1.active .top {
   stroke-dashoffset: -98px;
 }
@@ -834,10 +836,6 @@ header {
     color: white;
     padding: .5vh;
   }
-}
-
-/* ======================== MOBILE LANDSCAPE (CELULARES EN HORIZONTAL) ======================== */
-@media (max-width: 920px) and (orientation: landscape) {
 }
 
 @media (min-width: 1023px) {
@@ -1605,10 +1603,7 @@ header {
 
 }
 
-
-
 /************************************************ ANIMATIONS ****************************************/
-
 
 @keyframes fadeInUp {
   0% {
