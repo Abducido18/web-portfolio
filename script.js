@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       }
     });
-  }, { threshold: [0.2] });
+  }, { threshold: 0.3, rootMargin: "-20% 0px -50% 0px" });
   sections.forEach(section => sectionObserver.observe(section));
 
   const sliderNavLinks = document.querySelectorAll('.slider-nav a');
@@ -59,10 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
         sliderNavLinks[index].classList.add('active');
       }
     });
-  }, {   
-      rootMargin: "-20% 0px -50% 0px",
-      threshold: 0.5 
-    });
+  }, { threshold: 0.5 });
 
   cards.forEach(card => cardObserver.observe(card));
 
