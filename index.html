@@ -57,8 +57,12 @@
     
     <div class="profile-image-container">
       <div class="icons-container">
-        <svg  class="github-logo" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>github</title> <rect width="24" height="24" fill="none"></rect> <path d="M12,2A10,10,0,0,0,8.84,21.5c.5.08.66-.23.66-.5V19.31C6.73,19.91,6.14,18,6.14,18A2.69,2.69,0,0,0,5,16.5c-.91-.62.07-.6.07-.6a2.1,2.1,0,0,1,1.53,1,2.15,2.15,0,0,0,2.91.83,2.16,2.16,0,0,1,.63-1.34C8,16.17,5.62,15.31,5.62,11.5a3.87,3.87,0,0,1,1-2.71,3.58,3.58,0,0,1,.1-2.64s.84-.27,2.75,1a9.63,9.63,0,0,1,5,0c1.91-1.29,2.75-1,2.75-1a3.58,3.58,0,0,1,.1,2.64,3.87,3.87,0,0,1,1,2.71c0,3.82-2.34,4.66-4.57,4.91a2.39,2.39,0,0,1,.69,1.85V21c0,.27.16.59.67.5A10,10,0,0,0,12,2Z"></path> </g></svg>
-        <svg class="mail-logo" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title></title> <g id="Complete"> <g id="mail"> <g> <polyline fill="none" points="4 8.2 12 14.1 20 8.2" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></polyline> <rect fill="none" height="14" rx="2" ry="2" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="18" x="3" y="6.5"></rect> </g> </g> </g> </g></svg>
+        <i class="fab fa-whatsapp"></i>
+        
+        <i class="fab fa-github"></i>
+        <i class="fas fa-envelope"></i>
+        <i class="fab fa-linkedin"></i>
+
 
       </div> 
       <img src="./html_finalprojimages/profile-photo.png" alt="" class="profile-image">
@@ -66,11 +70,10 @@
     <div class="profile-title">
       <h1 class="name">ABDO RODRÍGUEZ</h1>
       <p>I'm a <span>Junior Frontend Developer </span>currently expanding my skills to become a Fullstack Developer. I have experience building interactive and responsive web applications with modern JavaScript frameworks.</p>
-      
     </div>  
 
   </section>
-  <div class="separator"></div>
+    <div class="separator"></div>
   
   <section class="skills" id="skills">
     <h1 class="title">Skills</h1>
@@ -167,8 +170,6 @@
     </div> 
     
       <div class="slider">
-
-
         <div class="project-card-container" id="slider-1">
           <div class="project-card">
             <div class="project-card-img-container">
@@ -246,21 +247,21 @@
           <p><i class="fas fa-university"></i> Issued by Appian | 2024</p>
           <a href="https://community.appian.com/members/abdor7075?badge=cert&now=638566663173237190" target="_blank">Credential URL</a>
         </div>   
-        
-        <div class="certification">
-          <h3>Professional in Coding</h3>
-          <p><i class="fas fa-university"></i> Issued by DEV.F | 2022</p>
-          <a href="" target="_blank"></a>
-        </div>  
-  
-  
+
       </div>
       <div class="certification-container">
         <h2 class="degree">Academic Background</h2>
+
         <div class="certification">
           <h3>Bachelor’s Degree in Music</h3>
           <p><i class="fas fa-university"></i> Unviersidad Veracruzana | 2023</p>
+          <a href="https://www.coursera.org/account/accomplishments/verify/JECEOFHSUI6Z" target="_blank">a</a>
         </div>
+                
+        <div class="certification">
+          <h3>Professional in Coding</h3>
+          <p><i class="fas fa-university"></i> Issued by DEV.F | 2022</p>
+        </div>  
       </div>
     </div>
 
@@ -272,9 +273,26 @@
   <!-- Contact Me -->
   <section class="contact-me" id="contact-me">
     <h1 class="title">Contact Me</h1>
-    <form action="">
-      <label for="fname">First Name:</label>
-      <input type="text" id="fname" name="fname" placeholder="Spongebob">
+    <form class="contact-form" action="">
+      <div>
+        <label for="fname">First Name</label>
+        <input type="text" id="fname" name="fname" placeholder="Joel">
+      </div> 
+      
+      <div>
+        <label for="lname">Last Name</label>
+        <input type="text" id="lname" name="lname" placeholder="Miller"> 
+      </div> 
+      <div>
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="joel-miller@qwer.com"> 
+      </div> 
+      <div>
+        <label for="message">Message</label>
+        <textarea type="text" id="message" name="user-message" placeholder=""></textarea>
+      </div> 
+
+      <button type="submit">Submit</button>
     </form>
   </section>
 

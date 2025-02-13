@@ -1,8 +1,16 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const animatedElements = document.querySelectorAll('.title, .card-container, .slider, .slider-nav, .certification-container');
-  const sections = document.querySelectorAll('section');
-  console.log(sections);
+  const animatedElements = document.querySelectorAll('.title, .card-container, .slider, .slider-nav, .contact-form, .certification-container');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.3 });
+  animatedElements.forEach(element => observer.observe(element));
 
+  const sections = document.querySelectorAll('section');
   const sectionObserver = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -19,21 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }, { threshold: [0.5, 0.9] });
-
   sections.forEach(section => sectionObserver.observe(section));
-
-
-
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.3 });
-
-  animatedElements.forEach(element => observer.observe(element));
 
   const sliderNavLinks = document.querySelectorAll('.slider-nav a');
   const slider = document.querySelector('.slider');
@@ -110,6 +104,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
   
+  const contactForm = document.querySelector('.contact-form');
+
 });
 
 
