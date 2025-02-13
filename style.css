@@ -684,11 +684,7 @@ header {
   stroke-dashoffset: -138px;
 }
 
-@media only screen and (max-height: 600px) and (orientation: landscape) {
-    h1 {
-      font-size: 100vh;
-    }
-  }
+
 
 @media (min-width: 768px) {
  
@@ -844,6 +840,63 @@ header {
   }
 }
 
+@media only screen and (max-height: 600px) and (orientation: landscape) {
+  .nav-bar {
+    padding: 0 30vh;
+
+  }
+ 
+  .home, .skills, .projects, .contact-me, .education {
+    padding: 0 30vh;
+  }
+
+  .nav-branding {
+    width: 5vh;
+    height: 5vh;
+    font-size: .8rem;
+  }
+
+  .title {
+    font-size: 2.5rem;
+  }
+
+  .home h1 {
+    font-size: 2rem;
+  }
+
+  .home p {
+    font-size: 0.7rem;
+  }
+
+  .card-img-container {
+    width: 7vh;
+    height: 7vh;
+  }
+
+  .card h3 {
+    font-size: 1rem;
+  }
+
+  .slider {
+    margin-bottom: 10vh;
+  }
+
+  .slider-nav {
+    bottom: 35vh;
+    left: 47%;
+  }
+
+  .project-card-container {
+    width: 18vh;
+  }
+  .project-card-text h3 {
+    font-size: 1rem;
+  }
+
+  .project-card-text p {
+    font-size: 0.5rem;
+  }
+}
 @media (min-width: 1023px) {
  
   .nav-bar {
