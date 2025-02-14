@@ -875,12 +875,12 @@ header {
 
 @media only screen and (max-height: 600px) and (orientation: landscape) {
   .nav-bar {
-    padding: 0 80vh;
+    padding: 0 20vh;
 
   }
  
   .home, .skills, .projects, .contact-me, .education {
-    padding: 0 80vh;
+    padding: 0 20vh;
   }
 
   .nav-branding {
@@ -934,7 +934,7 @@ header {
   }
 
   .slider-nav {
-    bottom: 55vh;
+    bottom: 49vh;
     left: 47%;
   }
 
@@ -987,11 +987,17 @@ header {
   .contact-me form div {
     width: 80%;
   }
+
+  .education-container {
+    display: flex; 
+    flex-direction: row;
+    justify-content: space-between;
+    align-self: unset;
+    align-items: unset;
+  }
 }
 
 @media (min-width: 1023px) {
- 
-  
   .nav-bar {
     padding: 0 10vh;
   }
@@ -1001,9 +1007,6 @@ header {
     height: 3vh;
     font-size: .9rem;
   }
-
-
-
 /*******************************
 *  HOME
 *******************************/
@@ -1019,7 +1022,6 @@ header {
     margin-top: 5vh;
     margin-bottom: 1vh;
     margin-right: 0;
-
   }
 
   .home h1 {
@@ -1028,6 +1030,10 @@ header {
 
   .profile-title p {
     font-size: 1.3rem;
+  }
+
+  .icons-container a {
+    margin-right: 0.5vh;
   }
 /*******************************
 *  SKILLS
@@ -1188,9 +1194,9 @@ header {
   margin-top: 1vh;
 }
 
-.fab.fa-github, .fab.fa-whatsapp, .fas.fa-envelope, .fab.fa-linkedin {
+.icons-container a {
   font-size: 1.8rem;
-  margin-right: 0.7vh;
+  margin-right: 1vh;
 }
 /*******************************
 *  SKILLS
@@ -1764,31 +1770,9 @@ header {
 
 /************************************************ ANIMATIONS ****************************************/
 
-@keyframes fadeInUp {
-  0% {
-    transform: translateY(-100px); /* Inicia más abajo */
-    opacity: 0; /* Comienza invisible */
-  }
-  100% {
-    transform: translateY(0); /* Llega a su posición original */
-    opacity: 1; /* Totalmente visible */
-  }
-}
-
 @keyframes fadeInDown {
   0% {
     transform: translateY(100px); /* Inicia más abajo */
-    opacity: 0; /* Comienza invisible */
-  }
-  100% {
-    transform: translateY(0); /* Llega a su posición original */
-    opacity: 1; /* Totalmente visible */
-  }
-}
-
-@keyframes fadeInLeft {
-  0% {
-    transform: translateX(-100px); /* Inicia más abajo */
     opacity: 0; /* Comienza invisible */
   }
   100% {
