@@ -840,24 +840,33 @@ header {
   }
 }
 
+
+
 @media only screen and (max-height: 600px) and (orientation: landscape) {
   .nav-bar {
-    padding: 0 30vh;
+    padding: 0 80vh;
 
   }
  
   .home, .skills, .projects, .contact-me, .education {
-    padding: 0 30vh;
+    padding: 0 80vh;
   }
 
   .nav-branding {
-    width: 5vh;
-    height: 5vh;
+    width: 8vh;
+    height: 8vh ;
     font-size: .8rem;
   }
 
   .title {
-    font-size: 2.5rem;
+    font-size: 2rem;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+  }
+
+  .education .title {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
   }
 
   .home h1 {
@@ -868,13 +877,25 @@ header {
     font-size: 0.7rem;
   }
 
+  .profile-image-container img {
+    width: 40vh;
+    height: auto;
+  }
+
+  .fab.fa-github, .fab.fa-whatsapp, .fas.fa-envelope, .fab.fa-linkedin {
+    font-size: 1.3rem;
+    margin-bottom: 0.7vh;
+    transition: color 0.3s ease;
+    color: black;
+  }
+
   .card-img-container {
-    width: 7vh;
-    height: 7vh;
+    width: 10vh;
+    height: 10vh;
   }
 
   .card h3 {
-    font-size: 1rem;
+    font-size: 0.7rem;
   }
 
   .slider {
@@ -882,12 +903,15 @@ header {
   }
 
   .slider-nav {
-    bottom: 35vh;
+    bottom: 55vh;
     left: 47%;
   }
 
   .project-card-container {
-    width: 18vh;
+    width: 10vw;
+  }
+  .project-card-text {
+    height: 28vh;
   }
   .project-card-text h3 {
     font-size: 1rem;
@@ -896,7 +920,44 @@ header {
   .project-card-text p {
     font-size: 0.5rem;
   }
+
+  .certification h3 {
+    text-align: left;
+  }
+
+  .certification-container h2 {
+    font-size: 1.2rem;
+  } 
+  .certification-container h3 {
+    font-size: 1rem;
+  } 
+
+  .certification-container a {
+    font-size: 0.8rem;
+  } 
+  
+  .contact-me form h2 {
+    text-align: start;
+    font-size: 1.3rem;
+    margin-bottom: 2vh;
+  }
+  
+  .contact-me form {
+    align-items: center;
+    width: 80%;
+
+  }
+  
+  .contact-form.visible {
+    animation: myAnimLeft 2s ease 0s 1 normal forwards;
+    opacity: 1;
+  }
+  
+  .contact-me form div {
+    width: 80%;
+  }
 }
+
 @media (min-width: 1023px) {
  
   .nav-bar {
