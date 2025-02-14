@@ -277,8 +277,6 @@ header {
 .profile-title span {
   font-weight: 500;
 }
-
-
 /*******************************
  *  SKILLS
  *******************************/
@@ -400,12 +398,14 @@ header {
   display: flex;
   column-gap: 1rem;
   position: absolute;
-  bottom: 33vh;
+  bottom: 37%;
   left: 45%;
   transform: translateX(-50%);
   z-index: 1;
   opacity: 0;
 }
+
+@media (max-width: 414px) {}
 
 .slider-nav.visible {
   opacity: 1;
@@ -458,7 +458,7 @@ header {
   display:flex;
   flex-direction: column;
   width: 100%;
-  height: 100%;
+  height: 20vh;
 }
 
 .project-card-text a {
@@ -1765,12 +1765,8 @@ header {
   }
 
   .contact-me form {
-
     width: 30%;
-
   }
-  
-
   
   .contact-me form div {
     display: flex;
